@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<schema-selection match-schema="RMDW"/>
+	<table-filter match-schema="RMDW" match-name="COUNTRY"/>
+	<table-filter match-schema="RMDW" match-name="HL7INBOUNDMESSAGE"/>
+	<table-filter match-schema="RMDW" match-name="HL7OUTBOUNDMESSAGE"/>
+	<table-filter match-schema="RMDW" match-name="HL7PATIENT"/>
+	<table-filter match-schema="RMDW" match-name="MODALITY"/>
+	<table-filter match-schema="RMDW" match-name="MODALITY_SERVICE"/>
+	<table-filter match-schema="RMDW" match-name="MUNICIPALITY"/>
+	<table-filter match-schema="RMDW" match-name="ORDER_SERVICE"/>
+	<table-filter match-schema="RMDW" match-name="ORGANIZATIONUNIT"/>
+	<table-filter match-schema="RMDW" match-name="PATIENT"/>
+	<table-filter match-schema="RMDW" match-name="PHRASEBOOK"/>
+	<table-filter match-schema="RMDW" match-name="PRIORITY"/>
+	<table-filter match-schema="RMDW" match-name="PROVINCE"/>
+	<table-filter match-schema="RMDW" match-name="RADIOLOGYORDER"/>
+	<table-filter match-schema="RMDW" match-name="RADIOLOGYORDERTRACKING"/>
+	<table-filter match-schema="RMDW" match-name="RADIOLOGYTASK"/>
+	<table-filter match-schema="RMDW" match-name="REGION"/>
+	<table-filter match-schema="RMDW" match-name="REPORT"/>
+	<table-filter match-schema="RMDW" match-name="REPORTTRACKING"/>
+	<table-filter match-schema="RMDW" match-name="RISUSER"/>
+	<table-filter match-schema="RMDW" match-name="SERVICE"/>
+	<table-filter match-schema="RMDW" match-name="STATUS"/>
+	<table-filter match-schema="RMDW" match-name="USER_REPORT"/>
+	<table-filter match-schema="RMDW" match-name="WORKLIST"/>
+	<table-filter match-schema="RMDW" match-name="WORKLISTTRACKING"/>
+</hibernate-reverse-engineering>

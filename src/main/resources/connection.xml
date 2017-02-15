@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DataTools.ServerProfiles version="1.0">
+	<profile autoconnect="No" desc=""
+		id="feacf0a0-f387-11e6-a56c-87d7f40906f8" name="RMDW"
+		providerID="org.eclipse.datatools.enablement.oracle.connectionProfile">
+		<baseproperties>
+			<property
+				name="org.eclipse.datatools.connectivity.db.connectionProperties"
+				value="" />
+			<property name="org.eclipse.datatools.connectivity.db.savePWD"
+				value="true" />
+			<property name="org.eclipse.datatools.connectivity.drivers.defnType"
+				value="org.eclipse.datatools.enablement.oracle.11.driverTemplate" />
+			<property name="org.eclipse.datatools.connectivity.db.username"
+				value="rmdw" />
+			<property name="org.eclipse.datatools.connectivity.db.driverClass"
+				value="oracle.jdbc.OracleDriver" />
+			<property name="org.eclipse.datatools.enablement.oracle.catalogType"
+				value="USER" />
+			<property name="org.eclipse.datatools.connectivity.driverDefinitionID"
+				value="DriverDefn.org.eclipse.datatools.enablement.oracle.11.driverTemplate.Oracle Thin Driver" />
+			<property name="org.eclipse.datatools.connectivity.db.databaseName"
+				value="xe" />
+			<property name="org.eclipse.datatools.connectivity.db.password"
+				value="rmdw" />
+			<property name="org.eclipse.datatools.connectivity.db.version"
+				value="11" />
+			<property name="org.eclipse.datatools.connectivity.db.URL"
+				value="jdbc:oracle:thin:@dev.neclab.it:1521:xe" />
+			<property name="org.eclipse.datatools.connectivity.db.vendor"
+				value="Oracle" />
+			<property name="jarList"
+				value="/home/luca/.m2/repository/com/oracle/ojdbc14/10.2.0.4.0/ojdbc14-10.2.0.4.0.jar" />
+		</baseproperties>
+		<org.eclipse.datatools.connectivity.versionInfo>
+			<property name="server.version" value="0.1.0.0.0 - Production" />
+			<property name="technology.name.jdbc" value="JDBC" />
+			<property name="server.name" value="Oracle" />
+			<property name="technology.version.jdbc" value="10.2.0" />
+		</org.eclipse.datatools.connectivity.versionInfo>
+		<org.eclipse.datatools.connectivity.sqm.filterSettings>
+			<property name="DatatoolsSchemaFilterPredicate" value="LIKE '%RMDW%'" />
+		</org.eclipse.datatools.connectivity.sqm.filterSettings>
+		<driverreference>
+			<property name="driverName" value="Oracle Thin Driver" />
+			<property name="driverTypeID"
+				value="org.eclipse.datatools.enablement.oracle.11.driverTemplate" />
+		</driverreference>
+	</profile>
+	<profile autoconnect="No" desc=""
+		id="6bca3b60-f38e-11e6-9b23-a95072526964" name="SSO"
+		providerID="org.eclipse.datatools.enablement.oracle.connectionProfile">
+		<baseproperties>
+			<property
+				name="org.eclipse.datatools.connectivity.db.connectionProperties"
+				value="" />
+			<property name="org.eclipse.datatools.connectivity.db.savePWD"
+				value="true" />
+			<property name="org.eclipse.datatools.connectivity.drivers.defnType"
+				value="org.eclipse.datatools.enablement.oracle.11.driverTemplate" />
+			<property name="org.eclipse.datatools.connectivity.db.username"
+				value="sso" />
+			<property name="org.eclipse.datatools.connectivity.db.driverClass"
+				value="oracle.jdbc.OracleDriver" />
+			<property name="org.eclipse.datatools.enablement.oracle.catalogType"
+				value="USER" />
+			<property name="org.eclipse.datatools.connectivity.driverDefinitionID"
+				value="DriverDefn.org.eclipse.datatools.enablement.oracle.11.driverTemplate.Oracle Thin Driver" />
+			<property name="org.eclipse.datatools.connectivity.db.databaseName"
+				value="xe" />
+			<property name="org.eclipse.datatools.connectivity.db.password"
+				value="sso" />
+			<property name="org.eclipse.datatools.connectivity.db.URL"
+				value="jdbc:oracle:thin:@dev.neclab.it:1521:xe" />
+			<property name="org.eclipse.datatools.connectivity.db.version"
+				value="11" />
+			<property name="org.eclipse.datatools.connectivity.db.vendor"
+				value="Oracle" />
+			<property name="jarList"
+				value="/home/luca/.m2/repository/com/oracle/ojdbc14/10.2.0.4.0/ojdbc14-10.2.0.4.0.jar" />
+		</baseproperties>
+		<org.eclipse.datatools.connectivity.versionInfo>
+			<property name="server.version" value="0.1.0.0.0 - Production" />
+			<property name="technology.name.jdbc" value="JDBC" />
+			<property name="server.name" value="Oracle" />
+			<property name="technology.version.jdbc" value="10.2.0" />
+		</org.eclipse.datatools.connectivity.versionInfo>
+		<org.eclipse.datatools.connectivity.sqm.filterSettings>
+			<property name="DatatoolsSchemaFilterPredicate" value="LIKE '%SSO%'" />
+		</org.eclipse.datatools.connectivity.sqm.filterSettings>
+		<driverreference>
+			<property name="driverName" value="Oracle Thin Driver" />
+			<property name="driverTypeID"
+				value="org.eclipse.datatools.enablement.oracle.11.driverTemplate" />
+		</driverreference>
+	</profile>
+	<profile autoconnect="No" desc=""
+		id="042a05e1-f38d-11e6-9b23-a95072526964" name="TMDW"
+		providerID="org.eclipse.datatools.enablement.oracle.connectionProfile">
+		<baseproperties>
+			<property
+				name="org.eclipse.datatools.connectivity.db.connectionProperties"
+				value="" />
+			<property name="org.eclipse.datatools.connectivity.db.savePWD"
+				value="true" />
+			<property name="org.eclipse.datatools.connectivity.drivers.defnType"
+				value="org.eclipse.datatools.enablement.oracle.11.driverTemplate" />
+			<property name="org.eclipse.datatools.connectivity.db.username"
+				value="tmdw" />
+			<property name="org.eclipse.datatools.connectivity.db.driverClass"
+				value="oracle.jdbc.OracleDriver" />
+			<property name="org.eclipse.datatools.enablement.oracle.catalogType"
+				value="USER" />
+			<property name="org.eclipse.datatools.connectivity.driverDefinitionID"
+				value="DriverDefn.org.eclipse.datatools.enablement.oracle.11.driverTemplate.Oracle Thin Driver" />
+			<property name="org.eclipse.datatools.connectivity.db.databaseName"
+				value="xe" />
+			<property name="org.eclipse.datatools.connectivity.db.password"
+				value="tmdw" />
+			<property name="org.eclipse.datatools.connectivity.db.version"
+				value="11" />
+			<property name="org.eclipse.datatools.connectivity.db.URL"
+				value="jdbc:oracle:thin:@dev.neclab.it:1521:xe" />
+			<property name="org.eclipse.datatools.connectivity.db.vendor"
+				value="Oracle" />
+			<property name="jarList"
+				value="/home/luca/.m2/repository/com/oracle/ojdbc14/10.2.0.4.0/ojdbc14-10.2.0.4.0.jar" />
+		</baseproperties>
+		<org.eclipse.datatools.connectivity.versionInfo>
+			<property name="server.version" value="0.1.0.0.0 - Production" />
+			<property name="technology.name.jdbc" value="JDBC" />
+			<property name="server.name" value="Oracle" />
+			<property name="technology.version.jdbc" value="10.2.0" />
+		</org.eclipse.datatools.connectivity.versionInfo>
+		<org.eclipse.datatools.connectivity.sqm.filterSettings>
+			<property name="DatatoolsSchemaFilterPredicate" value="LIKE '%TMDW%'" />
+		</org.eclipse.datatools.connectivity.sqm.filterSettings>
+		<driverreference>
+			<property name="driverName" value="Oracle Thin Driver" />
+			<property name="driverTypeID"
+				value="org.eclipse.datatools.enablement.oracle.11.driverTemplate" />
+		</driverreference>
+	</profile>
+</DataTools.ServerProfiles>
