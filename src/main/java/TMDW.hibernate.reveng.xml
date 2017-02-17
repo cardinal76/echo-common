@@ -2,6 +2,47 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
 
 <hibernate-reverse-engineering>
-	<schema-selection match-schema="TMDW"/>
-  	<table-filter match-name=".*"/>
+  <table-filter match-schema="tmdw" match-name="care_giver"/>
+  <table-filter match-schema="tmdw" match-name="clinic_folder"/>
+  <table-filter match-schema="tmdw" match-name="clinic_report"/>
+  <table-filter match-schema="tmdw" match-name="country"/>
+  <table-filter match-schema="tmdw" match-name="custom_threshold"/>
+  <table-filter match-schema="tmdw" match-name="detection_plan"/>
+  <table-filter match-schema="tmdw" match-name="detection_result"/>
+  <table-filter match-schema="tmdw" match-name="detection_task"/>
+  <table-filter match-schema="tmdw" match-name="detection_type"/>
+  <table-filter match-schema="tmdw" match-name="detectiontype_measurementtype"/>
+  <table-filter match-schema="tmdw" match-name="health_device"/>
+  <table-filter match-schema="tmdw" match-name="health_devicetype"/>
+  <table-filter match-schema="tmdw" match-name="health_kit"/>
+  <table-filter match-schema="tmdw" match-name="healthkit_patient"/>
+  <table-filter match-schema="tmdw" match-name="language_type"/>
+  <table-filter match-schema="tmdw" match-name="measurement_type"/>
+  <table-filter match-schema="tmdw" match-name="measurement_unit"/>
+  <table-filter match-schema="tmdw" match-name="meeting_request"/>
+  <table-filter match-schema="tmdw" match-name="message"/>
+  <table-filter match-schema="tmdw" match-name="municipality"/>
+  <table-filter match-schema="tmdw" match-name="notification"/>
+  <table-filter match-schema="tmdw" match-name="notification_type"/>
+  <table-filter match-schema="tmdw" match-name="nurse"/>
+  <table-filter match-schema="tmdw" match-name="nurse_organizationunit"/>
+  <table-filter match-schema="tmdw" match-name="nurse_patient"/>
+  <table-filter match-schema="tmdw" match-name="organization_unit"/>
+  <table-filter match-schema="tmdw" match-name="patient"/>
+  <table-filter match-schema="tmdw" match-name="patient_caregiver"/>
+  <table-filter match-schema="tmdw" match-name="physician"/>
+  <table-filter match-schema="tmdw" match-name="physician_organizationunit"/>
+  <table-filter match-schema="tmdw" match-name="physician_patient"/>
+  <table-filter match-schema="tmdw" match-name="physician_specialtytype"/>
+  <table-filter match-schema="tmdw" match-name="province"/>
+  <table-filter match-schema="tmdw" match-name="region"/>
+  <table-filter match-schema="tmdw" match-name="specialty_type"/>
+  <table-filter match-schema="tmdw" match-name="standard_threshold"/>
+  <table-filter match-schema="tmdw" match-name="system_event"/>
+  <table-filter match-schema="tmdw" match-name="systemevent_type"/>
+  <table-filter match-schema="tmdw" match-name="treatment_plan"/>
+  <table-filter match-schema="tmdw" match-name="treatment_task"/>
+  <table-filter match-schema="tmdw" match-name="work_list"/>
+  <table-filter match-schema="tmdw" match-name="work_task"/>
+  <table-filter match-schema="tmdw" match-name="work_type"/>
 </hibernate-reverse-engineering>

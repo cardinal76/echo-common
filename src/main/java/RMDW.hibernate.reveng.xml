@@ -2,30 +2,30 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
 
 <hibernate-reverse-engineering>
-	<schema-selection match-schema="RMDW"/>
-	<table-filter match-schema="RMDW" match-name="COUNTRY"/>
-	<table-filter match-schema="RMDW" match-name="HL7INBOUNDMESSAGE"/>
-	<table-filter match-schema="RMDW" match-name="HL7OUTBOUNDMESSAGE"/>
-	<table-filter match-schema="RMDW" match-name="HL7PATIENT"/>
-	<table-filter match-schema="RMDW" match-name="MODALITY"/>
-	<table-filter match-schema="RMDW" match-name="MODALITY_SERVICE"/>
-	<table-filter match-schema="RMDW" match-name="MUNICIPALITY"/>
-	<table-filter match-schema="RMDW" match-name="ORDER_SERVICE"/>
-	<table-filter match-schema="RMDW" match-name="ORGANIZATIONUNIT"/>
-	<table-filter match-schema="RMDW" match-name="PATIENT"/>
-	<table-filter match-schema="RMDW" match-name="PHRASEBOOK"/>
-	<table-filter match-schema="RMDW" match-name="PRIORITY"/>
-	<table-filter match-schema="RMDW" match-name="PROVINCE"/>
-	<table-filter match-schema="RMDW" match-name="RADIOLOGYORDER"/>
-	<table-filter match-schema="RMDW" match-name="RADIOLOGYORDERTRACKING"/>
-	<table-filter match-schema="RMDW" match-name="RADIOLOGYTASK"/>
-	<table-filter match-schema="RMDW" match-name="REGION"/>
-	<table-filter match-schema="RMDW" match-name="REPORT"/>
-	<table-filter match-schema="RMDW" match-name="REPORTTRACKING"/>
-	<table-filter match-schema="RMDW" match-name="RISUSER"/>
-	<table-filter match-schema="RMDW" match-name="SERVICE"/>
-	<table-filter match-schema="RMDW" match-name="STATUS"/>
-	<table-filter match-schema="RMDW" match-name="USER_REPORT"/>
-	<table-filter match-schema="RMDW" match-name="WORKLIST"/>
-	<table-filter match-schema="RMDW" match-name="WORKLISTTRACKING"/>
+  <table-filter match-schema="rmdw" match-name="country"/>
+  <table-filter match-schema="rmdw" match-name="hl7_inbound_message"/>
+  <table-filter match-schema="rmdw" match-name="hl7_order"/>
+  <table-filter match-schema="rmdw" match-name="hl7_outbound_message"/>
+  <table-filter match-schema="rmdw" match-name="hl7_patient"/>
+  <table-filter match-schema="rmdw" match-name="modality"/>
+  <table-filter match-schema="rmdw" match-name="modality_service"/>
+  <table-filter match-schema="rmdw" match-name="municipality"/>
+  <table-filter match-schema="rmdw" match-name="order"/>
+  <table-filter match-schema="rmdw" match-name="order_log"/>
+  <table-filter match-schema="rmdw" match-name="order_service"/>
+  <table-filter match-schema="rmdw" match-name="organization_unit"/>
+  <table-filter match-schema="rmdw" match-name="patient"/>
+  <table-filter match-schema="rmdw" match-name="phrase_book"/>
+  <table-filter match-schema="rmdw" match-name="province"/>
+  <table-filter match-schema="rmdw" match-name="region"/>
+  <table-filter match-schema="rmdw" match-name="service"/>
+  <table-filter match-schema="rmdw" match-name="user"/>
+  <table-filter match-schema="rmdw" match-name="work_priority"/>
+  <table-filter match-schema="rmdw" match-name="work_report"/>
+  <table-filter match-schema="rmdw" match-name="work_report_log"/>
+  <table-filter match-schema="rmdw" match-name="work_report_user"/>
+  <table-filter match-schema="rmdw" match-name="work_session"/>
+  <table-filter match-schema="rmdw" match-name="work_status"/>
+  <table-filter match-schema="rmdw" match-name="work_task"/>
+  <table-filter match-schema="rmdw" match-name="work_task_log"/>
 </hibernate-reverse-engineering>
