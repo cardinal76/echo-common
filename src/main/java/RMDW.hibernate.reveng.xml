@@ -5,6 +5,7 @@
   <table-filter match-schema="rmdw" match-name="app_setting"/>
   <table-filter match-schema="rmdw" match-name="body_apparatus"/>
   <table-filter match-schema="rmdw" match-name="burn_robot"/>
+  <table-filter match-schema="rmdw" match-name="citizenship"/>
   <table-filter match-schema="rmdw" match-name="coding_actor"/>
   <table-filter match-schema="rmdw" match-name="country"/>
   <table-filter match-schema="rmdw" match-name="hl7_inbound_message"/>
@@ -13,6 +14,7 @@
   <table-filter match-schema="rmdw" match-name="hl7_patient"/>
   <table-filter match-schema="rmdw" match-name="icd9_patology"/>
   <table-filter match-schema="rmdw" match-name="icd9_patology_group"/>
+  <table-filter match-schema="rmdw" match-name="maritalstatus"/>
   <table-filter match-schema="rmdw" match-name="modality"/>
   <table-filter match-schema="rmdw" match-name="modality_service"/>
   <table-filter match-schema="rmdw" match-name="modality_type"/>
@@ -22,6 +24,7 @@
   <table-filter match-schema="rmdw" match-name="order_service"/>
   <table-filter match-schema="rmdw" match-name="organization_unit"/>
   <table-filter match-schema="rmdw" match-name="patient"/>
+  <table-filter match-schema="rmdw" match-name="patient_coding_actor"/>
   <table-filter match-schema="rmdw" match-name="phrase_book"/>
   <table-filter match-schema="rmdw" match-name="province"/>
   <table-filter match-schema="rmdw" match-name="region"/>
