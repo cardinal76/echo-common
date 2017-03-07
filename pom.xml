@@ -65,7 +65,7 @@
 			<artifactId>postgresql</artifactId>
 			<version>${postgre-jdbc.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-tools</artifactId>
@@ -98,27 +98,32 @@
 						<phase>none</phase>
 						<configuration>
 							<target>
-								<property name="compile_classpath" refid="maven.compile.classpath"/>
-				                <property name="runtime_classpath" refid="maven.runtime.classpath"/>
-				                <property name="test_classpath" refid="maven.test.classpath"/>
-				                <property name="plugin_classpath" refid="maven.plugin.classpath"/>
-				
-				                <echo message="compile classpath: ${compile_classpath}"/>
-				                <echo message="---------------------------------------------------------------------------------------------------------"/>
-				                <echo message="runtime classpath: ${runtime_classpath}"/>
-				                <echo message="---------------------------------------------------------------------------------------------------------"/>
-				                <echo message="test classpath:    ${test_classpath}"/>
-				                <echo message="---------------------------------------------------------------------------------------------------------"/>
-				                <echo message="plugin classpath:  ${plugin_classpath}"/>
-				                <echo message="---------------------------------------------------------------------------------------------------------"/>
-							
+								<property name="compile_classpath" refid="maven.compile.classpath" />
+								<property name="runtime_classpath" refid="maven.runtime.classpath" />
+								<property name="test_classpath" refid="maven.test.classpath" />
+								<property name="plugin_classpath" refid="maven.plugin.classpath" />
+
+								<echo message="compile classpath: ${compile_classpath}" />
+								<echo
+									message="---------------------------------------------------------------------------------------------------------" />
+								<echo message="runtime classpath: ${runtime_classpath}" />
+								<echo
+									message="---------------------------------------------------------------------------------------------------------" />
+								<echo message="test classpath:    ${test_classpath}" />
+								<echo
+									message="---------------------------------------------------------------------------------------------------------" />
+								<echo message="plugin classpath:  ${plugin_classpath}" />
+								<echo
+									message="---------------------------------------------------------------------------------------------------------" />
+
 								<echo message="Start generating entities .." />
-								<taskdef name="hibernatetool" classname="org.hibernate.tool.ant.HibernateToolTask" classpathref="maven.plugin.classpath"/>
+								<taskdef name="hibernatetool" classname="org.hibernate.tool.ant.HibernateToolTask"
+									classpathref="maven.plugin.classpath" />
 								<hibernatetool>
 									<jdbcconfiguration revengfile="src/main/java/RMDW.hibernate.reveng.xml"
-										packagename="it.clevercom.echo.rd.model.entity" detectmanytomany="true"
-										configurationfile="src/main/java/RMDW.hibernate.cfg.xml" 
-										reversestrategy="it.clevercom.echo.rd.reveng.strategy.Custom_RMDW_Strategy"/>
+										packagename="it.clevercom.echo.rd.model.entity"
+										detectmanytomany="true" configurationfile="src/main/java/RMDW.hibernate.cfg.xml"
+										reversestrategy="it.clevercom.echo.rd.reveng.strategy.Custom_RMDW_Strategy" />
 									<hbm2java destdir="src/main/java" jdk5="true" ejb3="true" />
 								</hibernatetool>
 								<echo message="End generating entities" />
@@ -192,6 +197,37 @@
 						<version>${hibernate-entities.version}</version>
 					</dependency>
 				</dependencies>
+			</plugin>
+			<plugin>
+				<groupId>com.google.code.maven-replacer-plugin</groupId>
+				<artifactId>replacer</artifactId>
+				<version>1.5.2</version>
+				<executions>
+					<execution>
+						<phase>none</phase>
+						<goals>
+							<goal>replace</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<includes>
+						<include>src/main/java/it/clevercom/echo/rd/model/entity/*.java</include>
+					</includes>
+					<replacements>
+						<replacement>
+							<token>@Entity</token>
+							<valueFile>src/main/resources/replaceAnnotation.txt</valueFile>>
+						</replacement>
+						<replacement>
+							<token>import javax.persistence.Table;</token>
+							<valueFile>src/main/resources/replaceImport.txt</valueFile>>
+						</replacement>
+					</replacements>
+					<regexFlags>
+						<regexFlag>MULTILINE</regexFlag>
+					</regexFlags>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

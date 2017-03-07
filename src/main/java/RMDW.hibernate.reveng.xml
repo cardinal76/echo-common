@@ -46,196 +46,287 @@
 
 	<table name="rd_app_setting">
 		<primary-key>
-			<generator class="identity"></generator>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">app_setting_idappsetting_seq</param>
+			</generator>
 			<key-column name="idsetting"/>
 		</primary-key>
 	</table>
 	
 	<table name="rd_burn_robot">
 		<primary-key>
-			<generator class="identity"></generator>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">burn_robot_idburnrobot_seq</param>
+			</generator>
 			<key-column name="idburnrobot"/>
 		</primary-key>
 	</table>
 	
 	<table name="rd_citizenship">
 		<primary-key>
-			<generator class="identity"></generator>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">citizenship_idcitizenship_seq</param>
+			</generator>
 			<key-column name="idcitizenship"/>
 		</primary-key>
 	</table>
 	
 	<table name="rd_coding_actor">
 		<primary-key>
-			<generator class="identity"></generator>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">coding_actor_idcodingactor_seq</param>
+			</generator>
 			<key-column name="idcodingactor"/>
 		</primary-key>
 	</table>
 	
 	<table name="rd_country">
 		<primary-key>
-			<generator class="identity"></generator>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">country_idcountry_seq</param>
+			</generator>
 			<key-column name="idcountry"/>
 		</primary-key>
 	</table>
 	
 	<table name="rd_hl7_inbound_message">
 		<primary-key>
-			<generator class="identity"></generator>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">hl7inboundmessage_id_seq</param>
+			</generator>
 			<key-column name="idinboundmessage"/>
 		</primary-key>
 	</table>
 	
 	<table name="rd_hl7_order">
 		<primary-key>
-			<generator class="identity"></generator>
 			<key-column name="idhl7order"/>
 		</primary-key>
 	</table>
 	
 	<table name="rd_hl7_outbound_message">
 		<primary-key>
-			<generator class="identity"></generator>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">hl7outboundmessage_id_seq</param>
+			</generator>
 			<key-column name="idoutboundmessage"/>
 		</primary-key>
 	</table>
 	
 	<table name="rd_hl7_patient">
 		<primary-key>
-			<generator class="identity"></generator>
 			<key-column name="idhl7patient"/>
 		</primary-key>
 	</table>
 	
 	<table name="rd_icd9_patology">
 		<primary-key>
-			<generator class="identity"></generator>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">icd9_patology_idicd9patology_seq</param>
+			</generator>
 			<key-column name="idicd9patology"/>
 		</primary-key>
 	</table>
 	
 	<table name="rd_modality">
 		<primary-key>
-			<generator class="identity"></generator>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">modality_idmodality_seq</param>
+			</generator>
 			<key-column name="idmodality"/>
 		</primary-key>
 	</table>
 	
 	<table name="rd_modality_type">
 		<primary-key>
-			<generator class="identity"></generator>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">modality_type_idmodalitytype_seq</param>
+			</generator>
 			<key-column name="idmodalitytype"/>
 		</primary-key>
 	</table>
 	
 	<table name="rd_municipality">
 		<primary-key>
-			<generator class="identity"></generator>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">municipality_idmunicipality_seq</param>
+			</generator>
 			<key-column name="idmunicipality"/>
 		</primary-key>
 	</table>
 	
 	<table name="rd_order">
 		<primary-key>
-			<generator class="identity"></generator>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">order_idorder_seq</param>
+			</generator>
 			<key-column name="idorder"/>
 		</primary-key>
 	</table>
 	
 	<table name="rd_order_log">
 		<primary-key>
-			<generator class="identity"></generator>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">order_log_idorderlog_seq</param>
+			</generator>
 			<key-column name="idorderlog"/>
 		</primary-key>
 	</table>
 
  	<table name="rd_organization_unit">
 		<primary-key>
-			<generator class="identity"></generator>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">organizationunit_idorganizationunit_seq</param>
+			</generator>
 			<key-column name="idorganizationunit"/>
 		</primary-key>
 	</table>
 	
 	<table name="rd_patient">
 		<primary-key>
-			<generator class="identity"></generator>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">patient_idpatient_seq</param>
+			</generator>
 			<key-column name="idpatient"/>
 		</primary-key>
 	</table>
 	
 	<table name="rd_phrase_book">
 		<primary-key>
-			<generator class="identity"></generator>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">phrasebook_idphrasebook_seq</param>
+			</generator>
 			<key-column name="idphrasebook"/>
 		</primary-key>
 	</table>
 	
 	<table name="rd_province">
 		<primary-key>
-			<generator class="identity"></generator>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">province_idprovince_seq</param>
+			</generator>
 			<key-column name="idprovince"/>
 		</primary-key>
 	</table>
 	
 	<table name="rd_region">
 		<primary-key>
-			<generator class="identity"></generator>
-			<key-column name="idregion"/>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">region_idregion_seq</param>			
+            </generator>	
+            <key-column name="idregion"/>
 		</primary-key>
 	</table>
 	
 	<table name="rd_service">
 		<primary-key>
-			<generator class="identity"></generator>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">service_idservice_seq</param>			
+            </generator>
 			<key-column name="idservice"/>
 		</primary-key>
 	</table>
 	    
 	<table name="rd_user">
 		<primary-key>
-			<generator class="identity"></generator>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">user_iduser_seq</param>			
+            </generator>
 			<key-column name="iduser"/>
 		</primary-key>
 	</table>
 	
 	<table name="rd_work_report">
 		<primary-key>
-			<generator class="identity"></generator>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">workreport_idworkreport_seq</param>			
+            </generator>
 			<key-column name="idworkreport"/>
 		</primary-key>
 	</table>
 	
 	<table name="rd_work_report_log">
 		<primary-key>
-			<generator class="identity"></generator>
-			<key-column name="idworkreportlog"/>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">workreportlog_idworkreportlog_seq</param>			
+            </generator>
+            <key-column name="idworkreportlog"/>
 		</primary-key>
 	</table>
 	
 	<table name="rd_work_session">
 		<primary-key>
-			<generator class="identity"></generator>
-			<key-column name="idworksession"/>
-		</primary-key>
-	</table>
-	
-	<table name="rd_work_session">
-		<primary-key>
-			<generator class="identity"></generator>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">worksession_idworksession_seq</param>			
+            </generator>
 			<key-column name="idworksession"/>
 		</primary-key>
 	</table>
 	
 	<table name="rd_work_task">
 		<primary-key>
-			<generator class="identity"></generator>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">worktask_idworktask_seq</param>			
+            </generator>
 			<key-column name="idworktask"/>
 		</primary-key>
 	</table>
 	
 	<table name="rd_work_task_log">
 		<primary-key>
-			<generator class="identity"></generator>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">worktasklog_idworktasklog_seq</param>			
+            </generator>
 			<key-column name="idworktasklog"/>
 		</primary-key>
 	</table>

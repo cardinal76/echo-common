@@ -4,9 +4,6 @@
 		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-    	<mapping>
-    		<sql-type jdbc-type="BIGINT" hibernate-type="java.lang.Long" />
-    	</mapping>
     	<property name="hibernate.default_schema">tmdw</property>
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
         <property name="hibernate.connection.password">echo</property>
