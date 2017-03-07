@@ -1,5 +1,5 @@
 package it.clevercom.echo.rd.model.entity;
-// Generated 7-mar-2017 15.16.14 by Hibernate Tools 5.2.2.Final
+// Generated 7-mar-2017 16.06.19 by Hibernate Tools 5.2.2.Final
 
 
 import java.util.Date;
@@ -8,6 +8,8 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -42,15 +44,13 @@ public class Country  implements java.io.Serializable {
     }
 
 	
-    public Country(Long idcountry, Date created, Date updated, String userupdate, boolean active) {
-        this.idcountry = idcountry;
+    public Country(Date created, Date updated, String userupdate, boolean active) {
         this.created = created;
         this.updated = updated;
         this.userupdate = userupdate;
         this.active = active;
     }
-    public Country(Long idcountry, String countryname, String countrynicename, String countryiso2, String countryiso3, Long countryisonumcode, Date created, Date updated, String userupdate, boolean active, Set<Patient> patientsForDomicileidcountry, Set<Patient> patientsForResidenceidcountry, Set<Region> regions, Set<Patient> patientsForBirthplaceidcountry) {
-       this.idcountry = idcountry;
+    public Country(String countryname, String countrynicename, String countryiso2, String countryiso3, Long countryisonumcode, Date created, Date updated, String userupdate, boolean active, Set<Patient> patientsForDomicileidcountry, Set<Patient> patientsForResidenceidcountry, Set<Region> regions, Set<Patient> patientsForBirthplaceidcountry) {
        this.countryname = countryname;
        this.countrynicename = countrynicename;
        this.countryiso2 = countryiso2;
@@ -66,7 +66,7 @@ public class Country  implements java.io.Serializable {
        this.patientsForBirthplaceidcountry = patientsForBirthplaceidcountry;
     }
    
-     @Id 
+     @Id @GeneratedValue(strategy=IDENTITY)
 
     
     @Column(name="idcountry", unique=true, nullable=false)

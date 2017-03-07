@@ -1,5 +1,5 @@
 package it.clevercom.echo.rd.model.entity;
-// Generated 7-mar-2017 15.16.14 by Hibernate Tools 5.2.2.Final
+// Generated 7-mar-2017 16.06.19 by Hibernate Tools 5.2.2.Final
 
 
 import java.util.Date;
@@ -8,6 +8,8 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -36,16 +38,14 @@ public class CodingActor  implements java.io.Serializable {
     }
 
 	
-    public CodingActor(Long idcodingactor, String name, Date created, String updated, String userupdate, boolean active) {
-        this.idcodingactor = idcodingactor;
+    public CodingActor(String name, Date created, String updated, String userupdate, boolean active) {
         this.name = name;
         this.created = created;
         this.updated = updated;
         this.userupdate = userupdate;
         this.active = active;
     }
-    public CodingActor(Long idcodingactor, String name, Date created, String updated, String userupdate, boolean active, Set<ServiceCodingActor> serviceCodingActors, Set<PatientCodingActor> patientCodingActors) {
-       this.idcodingactor = idcodingactor;
+    public CodingActor(String name, Date created, String updated, String userupdate, boolean active, Set<ServiceCodingActor> serviceCodingActors, Set<PatientCodingActor> patientCodingActors) {
        this.name = name;
        this.created = created;
        this.updated = updated;
@@ -55,7 +55,7 @@ public class CodingActor  implements java.io.Serializable {
        this.patientCodingActors = patientCodingActors;
     }
    
-     @Id 
+     @Id @GeneratedValue(strategy=IDENTITY)
 
     
     @Column(name="idcodingactor", unique=true, nullable=false)

@@ -1,5 +1,5 @@
 package it.clevercom.echo.rd.model.entity;
-// Generated 7-mar-2017 15.16.14 by Hibernate Tools 5.2.2.Final
+// Generated 7-mar-2017 16.06.19 by Hibernate Tools 5.2.2.Final
 
 
 import java.util.Date;
@@ -8,6 +8,8 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -47,8 +49,7 @@ public class User  implements java.io.Serializable {
     }
 
 	
-    public User(Long iduser, String username, String type, String name, String surname, String gender, Date created, Date updated, String userupdate, boolean active) {
-        this.iduser = iduser;
+    public User(String username, String type, String name, String surname, String gender, Date created, Date updated, String userupdate, boolean active) {
         this.username = username;
         this.type = type;
         this.name = name;
@@ -59,8 +60,7 @@ public class User  implements java.io.Serializable {
         this.userupdate = userupdate;
         this.active = active;
     }
-    public User(Long iduser, String username, String type, String name, String surname, String gender, String taxcode, Date birthdate, String phonenumber, Date created, Date updated, String userupdate, boolean active, String alternativephonenumber, String email, Set<AppSetting> appSettings, Set<PhraseBook> phraseBooks, Set<WorkReportUser> workReportUsers, Set<WorkTask> workTasks) {
-       this.iduser = iduser;
+    public User(String username, String type, String name, String surname, String gender, String taxcode, Date birthdate, String phonenumber, Date created, Date updated, String userupdate, boolean active, String alternativephonenumber, String email, Set<AppSetting> appSettings, Set<PhraseBook> phraseBooks, Set<WorkReportUser> workReportUsers, Set<WorkTask> workTasks) {
        this.username = username;
        this.type = type;
        this.name = name;
@@ -81,7 +81,7 @@ public class User  implements java.io.Serializable {
        this.workTasks = workTasks;
     }
    
-     @Id 
+     @Id @GeneratedValue(strategy=IDENTITY)
 
     
     @Column(name="iduser", unique=true, nullable=false)

@@ -1,9 +1,11 @@
 package it.clevercom.echo.rd.model.entity;
-// Generated 7-mar-2017 15.16.14 by Hibernate Tools 5.2.2.Final
+// Generated 7-mar-2017 16.06.19 by Hibernate Tools 5.2.2.Final
 
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -21,11 +23,8 @@ public class Hl7Order  implements java.io.Serializable {
     public Hl7Order() {
     }
 
-    public Hl7Order(Long idhl7order) {
-       this.idhl7order = idhl7order;
-    }
    
-     @Id 
+     @Id @GeneratedValue(strategy=IDENTITY)
 
     
     @Column(name="idhl7order", unique=true, nullable=false)

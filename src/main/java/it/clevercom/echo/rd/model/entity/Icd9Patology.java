@@ -1,11 +1,13 @@
 package it.clevercom.echo.rd.model.entity;
-// Generated 7-mar-2017 15.16.14 by Hibernate Tools 5.2.2.Final
+// Generated 7-mar-2017 16.06.19 by Hibernate Tools 5.2.2.Final
 
 
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -35,8 +37,7 @@ public class Icd9Patology  implements java.io.Serializable {
     }
 
 	
-    public Icd9Patology(Long idicd9patology, String code, String description, Date created, Date updated, String userupdate, boolean active) {
-        this.idicd9patology = idicd9patology;
+    public Icd9Patology(String code, String description, Date created, Date updated, String userupdate, boolean active) {
         this.code = code;
         this.description = description;
         this.created = created;
@@ -44,8 +45,7 @@ public class Icd9Patology  implements java.io.Serializable {
         this.userupdate = userupdate;
         this.active = active;
     }
-    public Icd9Patology(Long idicd9patology, Icd9PatologyGroup icd9PatologyGroup, String code, String description, Date created, Date updated, String userupdate, boolean active) {
-       this.idicd9patology = idicd9patology;
+    public Icd9Patology(Icd9PatologyGroup icd9PatologyGroup, String code, String description, Date created, Date updated, String userupdate, boolean active) {
        this.icd9PatologyGroup = icd9PatologyGroup;
        this.code = code;
        this.description = description;
@@ -55,7 +55,7 @@ public class Icd9Patology  implements java.io.Serializable {
        this.active = active;
     }
    
-     @Id 
+     @Id @GeneratedValue(strategy=IDENTITY)
 
     
     @Column(name="idicd9patology", unique=true, nullable=false)

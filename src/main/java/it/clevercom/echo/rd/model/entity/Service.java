@@ -1,5 +1,5 @@
 package it.clevercom.echo.rd.model.entity;
-// Generated 7-mar-2017 15.16.14 by Hibernate Tools 5.2.2.Final
+// Generated 7-mar-2017 16.06.19 by Hibernate Tools 5.2.2.Final
 
 
 import java.util.Date;
@@ -8,6 +8,8 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -45,15 +47,13 @@ public class Service  implements java.io.Serializable {
     }
 
 	
-    public Service(Long idservice, Date created, Date updated, String userupdate, boolean active) {
-        this.idservice = idservice;
+    public Service(Date created, Date updated, String userupdate, boolean active) {
         this.created = created;
         this.updated = updated;
         this.userupdate = userupdate;
         this.active = active;
     }
-    public Service(Long idservice, BodyApparatus bodyApparatus, ModalityType modalityType, String description, Date created, Date updated, String userupdate, boolean active, Long prepcode, Long duration, Boolean schedulable, Set<ServiceCodingActor> serviceCodingActors, Set<WorkTask> workTasks, Set<ModalityService> modalityServices, Set<OrderService> orderServices) {
-       this.idservice = idservice;
+    public Service(BodyApparatus bodyApparatus, ModalityType modalityType, String description, Date created, Date updated, String userupdate, boolean active, Long prepcode, Long duration, Boolean schedulable, Set<ServiceCodingActor> serviceCodingActors, Set<WorkTask> workTasks, Set<ModalityService> modalityServices, Set<OrderService> orderServices) {
        this.bodyApparatus = bodyApparatus;
        this.modalityType = modalityType;
        this.description = description;
@@ -70,7 +70,7 @@ public class Service  implements java.io.Serializable {
        this.orderServices = orderServices;
     }
    
-     @Id 
+     @Id @GeneratedValue(strategy=IDENTITY)
 
     
     @Column(name="idservice", unique=true, nullable=false)

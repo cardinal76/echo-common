@@ -1,5 +1,5 @@
 package it.clevercom.echo.rd.model.entity;
-// Generated 7-mar-2017 15.16.14 by Hibernate Tools 5.2.2.Final
+// Generated 7-mar-2017 16.06.19 by Hibernate Tools 5.2.2.Final
 
 
 import java.util.Date;
@@ -8,6 +8,8 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -35,16 +37,14 @@ public class ModalityType  implements java.io.Serializable {
     }
 
 	
-    public ModalityType(Long idmodalitytype, String type, Date created, Date updated, String userupdate, boolean active) {
-        this.idmodalitytype = idmodalitytype;
+    public ModalityType(String type, Date created, Date updated, String userupdate, boolean active) {
         this.type = type;
         this.created = created;
         this.updated = updated;
         this.userupdate = userupdate;
         this.active = active;
     }
-    public ModalityType(Long idmodalitytype, String type, Date created, Date updated, String userupdate, boolean active, Set<Service> services) {
-       this.idmodalitytype = idmodalitytype;
+    public ModalityType(String type, Date created, Date updated, String userupdate, boolean active, Set<Service> services) {
        this.type = type;
        this.created = created;
        this.updated = updated;
@@ -53,7 +53,7 @@ public class ModalityType  implements java.io.Serializable {
        this.services = services;
     }
    
-     @Id 
+     @Id @GeneratedValue(strategy=IDENTITY)
 
     
     @Column(name="idmodalitytype", unique=true, nullable=false)

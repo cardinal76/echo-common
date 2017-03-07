@@ -44,78 +44,200 @@
 	<table-filter match-schema="rmdw" match-name="rd_work_task" />
 	<table-filter match-schema="rmdw" match-name="rd_work_task_log" />
 
-<!-- 	<table schema="rmdw" name="rd_user" -->
-<!-- 		class="it.clevercom.echo.rd.model.entity.User" /> -->
-<!-- 	<table schema="rmdw" name="rd_body_apparatus" -->
-<!-- 		class="it.clevercom.echo.rd.model.entity.BodyApparatus" /> -->
-<!-- 	<table schema="rmdw" name="rd_burn_robot" -->
-<!-- 		class="it.clevercom.echo.rd.model.entity.BurnRobot" /> -->
-<!-- 	<table schema="rmdw" name="rd_citizenship" -->
-<!-- 		class="it.clevercom.echo.rd.model.entity.Citizenship" /> -->
-<!-- 	<table schema="rmdw" name="rd_coding_actor" -->
-<!-- 		class="it.clevercom.echo.rd.model.entity.CodingActor" /> -->
-<!-- 	<table schema="rmdw" name="rd_country" -->
-<!-- 		class="it.clevercom.echo.rd.model.entity.Country" /> -->
-<!-- 	<table schema="rmdw" name="rd_hl7_inbound_message" -->
-<!-- 		class="it.clevercom.echo.rd.model.entity.Hl7InboundMessage" /> -->
-<!-- 	<table schema="rmdw" name="rd_hl7_order" -->
-<!-- 		class="it.clevercom.echo.rd.model.entity.Hl7Order" /> -->
-<!-- 	<table schema="rmdw" name="rd_hl7_outbound_message" -->
-<!-- 		class="it.clevercom.echo.rd.model.entity.Hl7OutboundMessage" /> -->
-<!-- 	<table schema="rmdw" name="rd_hl7_patient" -->
-<!-- 		class="it.clevercom.echo.rd.model.entity.Hl7Patient" /> -->
-<!-- 	<table schema="rmdw" name="rd_icd9_patology" -->
-<!-- 		class="it.clevercom.echo.rd.model.entity.Icd9Patology" /> -->
-<!-- 	<table schema="rmdw" name="rd_icd9_patology_group" -->
-<!-- 		class="it.clevercom.echo.rd.model.entity.Icd9PatologyGroup" /> -->
-<!-- 	<table schema="rmdw" name="rd_maritalstatus" -->
-<!-- 		class="it.clevercom.echo.rd.model.entity.Maritalstatus" /> -->
-<!-- 	<table schema="rmdw" name="rd_modality" -->
-<!-- 		class="it.clevercom.echo.rd.model.entity.Modality" /> -->
-<!-- 	<table schema="rmdw" name="rd_modality_service" -->
-<!-- 		class="it.clevercom.echo.rd.model.entity.ModalityService" /> -->
-<!-- 	<table schema="rmdw" name="rd_modality_type" -->
-<!-- 		class="it.clevercom.echo.rd.model.entity.ModalityType" /> -->
-<!-- 	<table schema="rmdw" name="rd_municipality" -->
-<!-- 		class="it.clevercom.echo.rd.model.entity.Municipality" /> -->
-<!-- 	<table schema="rmdw" name="rd_order" -->
-<!-- 		class="it.clevercom.echo.rd.model.entity.Order" /> -->
-<!-- 	<table schema="rmdw" name="rd_order_log" -->
-<!-- 		class="it.clevercom.echo.rd.model.entity.OrderLog" /> -->
-<!-- 	<table schema="rmdw" name="rd_order_service" -->
-<!-- 		class="it.clevercom.echo.rd.model.entity.OrderService" /> -->
-<!-- 	<table schema="rmdw" name="rd_organization_unit" -->
-<!-- 		class="it.clevercom.echo.rd.model.entity.OrganizationUnit" /> -->
-<!-- 	<table schema="rmdw" name="rd_patient" -->
-<!-- 		class="it.clevercom.echo.rd.model.entity.Patient" /> -->
-<!-- 	<table schema="rmdw" name="rd_patient_coding_actor" -->
-<!-- 		class="it.clevercom.echo.rd.model.entity.PatientCodingActor" /> -->
-<!-- 	<table schema="rmdw" name="rd_phrase_book" -->
-<!-- 		class="it.clevercom.echo.rd.model.entity.PhraseBook" /> -->
-<!-- 	<table schema="rmdw" name="rd_province" -->
-<!-- 		class="it.clevercom.echo.rd.model.entity.Province" /> -->
-<!-- 	<table schema="rmdw" name="rd_region" -->
-<!-- 		class="it.clevercom.echo.rd.model.entity.Region" /> -->
-<!-- 	<table schema="rmdw" name="rd_service" -->
-<!-- 		class="it.clevercom.echo.rd.model.entity.Service" /> -->
-<!-- 	<table schema="rmdw" name="rd_service_coding_actor" -->
-<!-- 		class="it.clevercom.echo.rd.model.entity.ServiceCodingActor" /> -->
-<!-- 	<table schema="rmdw" name="rd_work_priority" -->
-<!-- 		class="it.clevercom.echo.rd.model.entity.WorkPriority" /> -->
-<!-- 	<table schema="rmdw" name="rd_work_report" -->
-<!-- 		class="it.clevercom.echo.rd.model.entity.WorkReport" /> -->
-<!-- 	<table schema="rmdw" name="rd_work_report_log" -->
-<!-- 		class="it.clevercom.echo.rd.model.entity.WorkReportLog" /> -->
-<!-- 	<table schema="rmdw" name="rd_work_report_user" -->
-<!-- 		class="it.clevercom.echo.rd.model.entity.WorkReportUser" /> -->
-<!-- 	<table schema="rmdw" name="rd_work_session" -->
-<!-- 		class="it.clevercom.echo.rd.model.entity.WorkSession" /> -->
-<!-- 	<table schema="rmdw" name="rd_work_status" -->
-<!-- 		class="it.clevercom.echo.rd.model.entity.WorkStatus" /> -->
-<!-- 	<table schema="rmdw" name="rd_work_task" -->
-<!-- 		class="it.clevercom.echo.rd.model.entity.WorkTask" /> -->
-<!-- 	<table schema="rmdw" name="rd_work_task_log" -->
-<!-- 		class="it.clevercom.echo.rd.model.entity.WorkTaskLog" /> -->
-<!-- 	<table schema="rmdw" name="rd_app_setting" -->
-<!-- 		class="it.clevercom.echo.rd.model.entity.AppSetting" /> -->
+	<table name="rd_app_setting">
+		<primary-key>
+			<generator class="identity"></generator>
+			<key-column name="idsetting"/>
+		</primary-key>
+	</table>
+	
+	<table name="rd_burn_robot">
+		<primary-key>
+			<generator class="identity"></generator>
+			<key-column name="idburnrobot"/>
+		</primary-key>
+	</table>
+	
+	<table name="rd_citizenship">
+		<primary-key>
+			<generator class="identity"></generator>
+			<key-column name="idcitizenship"/>
+		</primary-key>
+	</table>
+	
+	<table name="rd_coding_actor">
+		<primary-key>
+			<generator class="identity"></generator>
+			<key-column name="idcodingactor"/>
+		</primary-key>
+	</table>
+	
+	<table name="rd_country">
+		<primary-key>
+			<generator class="identity"></generator>
+			<key-column name="idcountry"/>
+		</primary-key>
+	</table>
+	
+	<table name="rd_hl7_inbound_message">
+		<primary-key>
+			<generator class="identity"></generator>
+			<key-column name="idinboundmessage"/>
+		</primary-key>
+	</table>
+	
+	<table name="rd_hl7_order">
+		<primary-key>
+			<generator class="identity"></generator>
+			<key-column name="idhl7order"/>
+		</primary-key>
+	</table>
+	
+	<table name="rd_hl7_outbound_message">
+		<primary-key>
+			<generator class="identity"></generator>
+			<key-column name="idoutboundmessage"/>
+		</primary-key>
+	</table>
+	
+	<table name="rd_hl7_patient">
+		<primary-key>
+			<generator class="identity"></generator>
+			<key-column name="idhl7patient"/>
+		</primary-key>
+	</table>
+	
+	<table name="rd_icd9_patology">
+		<primary-key>
+			<generator class="identity"></generator>
+			<key-column name="idicd9patology"/>
+		</primary-key>
+	</table>
+	
+	<table name="rd_modality">
+		<primary-key>
+			<generator class="identity"></generator>
+			<key-column name="idmodality"/>
+		</primary-key>
+	</table>
+	
+	<table name="rd_modality_type">
+		<primary-key>
+			<generator class="identity"></generator>
+			<key-column name="idmodalitytype"/>
+		</primary-key>
+	</table>
+	
+	<table name="rd_municipality">
+		<primary-key>
+			<generator class="identity"></generator>
+			<key-column name="idmunicipality"/>
+		</primary-key>
+	</table>
+	
+	<table name="rd_order">
+		<primary-key>
+			<generator class="identity"></generator>
+			<key-column name="idorder"/>
+		</primary-key>
+	</table>
+	
+	<table name="rd_order_log">
+		<primary-key>
+			<generator class="identity"></generator>
+			<key-column name="idorderlog"/>
+		</primary-key>
+	</table>
+
+ 	<table name="rd_organization_unit">
+		<primary-key>
+			<generator class="identity"></generator>
+			<key-column name="idorganizationunit"/>
+		</primary-key>
+	</table>
+	
+	<table name="rd_patient">
+		<primary-key>
+			<generator class="identity"></generator>
+			<key-column name="idpatient"/>
+		</primary-key>
+	</table>
+	
+	<table name="rd_phrase_book">
+		<primary-key>
+			<generator class="identity"></generator>
+			<key-column name="idphrasebook"/>
+		</primary-key>
+	</table>
+	
+	<table name="rd_province">
+		<primary-key>
+			<generator class="identity"></generator>
+			<key-column name="idprovince"/>
+		</primary-key>
+	</table>
+	
+	<table name="rd_region">
+		<primary-key>
+			<generator class="identity"></generator>
+			<key-column name="idregion"/>
+		</primary-key>
+	</table>
+	
+	<table name="rd_service">
+		<primary-key>
+			<generator class="identity"></generator>
+			<key-column name="idservice"/>
+		</primary-key>
+	</table>
+	    
+	<table name="rd_user">
+		<primary-key>
+			<generator class="identity"></generator>
+			<key-column name="iduser"/>
+		</primary-key>
+	</table>
+	
+	<table name="rd_work_report">
+		<primary-key>
+			<generator class="identity"></generator>
+			<key-column name="idworkreport"/>
+		</primary-key>
+	</table>
+	
+	<table name="rd_work_report_log">
+		<primary-key>
+			<generator class="identity"></generator>
+			<key-column name="idworkreportlog"/>
+		</primary-key>
+	</table>
+	
+	<table name="rd_work_session">
+		<primary-key>
+			<generator class="identity"></generator>
+			<key-column name="idworksession"/>
+		</primary-key>
+	</table>
+	
+	<table name="rd_work_session">
+		<primary-key>
+			<generator class="identity"></generator>
+			<key-column name="idworksession"/>
+		</primary-key>
+	</table>
+	
+	<table name="rd_work_task">
+		<primary-key>
+			<generator class="identity"></generator>
+			<key-column name="idworktask"/>
+		</primary-key>
+	</table>
+	
+	<table name="rd_work_task_log">
+		<primary-key>
+			<generator class="identity"></generator>
+			<key-column name="idworktasklog"/>
+		</primary-key>
+	</table>
+	
 </hibernate-reverse-engineering>

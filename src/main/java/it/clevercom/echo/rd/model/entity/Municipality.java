@@ -1,5 +1,5 @@
 package it.clevercom.echo.rd.model.entity;
-// Generated 7-mar-2017 15.16.14 by Hibernate Tools 5.2.2.Final
+// Generated 7-mar-2017 16.06.19 by Hibernate Tools 5.2.2.Final
 
 
 import java.util.Date;
@@ -8,6 +8,8 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -43,15 +45,13 @@ public class Municipality  implements java.io.Serializable {
     }
 
 	
-    public Municipality(Long idmunicipality, Date created, Date updated, String userupdate, boolean active) {
-        this.idmunicipality = idmunicipality;
+    public Municipality(Date created, Date updated, String userupdate, boolean active) {
         this.created = created;
         this.updated = updated;
         this.userupdate = userupdate;
         this.active = active;
     }
-    public Municipality(Long idmunicipality, Province province, String municipalityname, String municipalitystdcode, Date created, Date updated, String userupdate, boolean active, String postalcode, Set<Patient> patientsForDomicileidmunicipality, Set<Patient> patientsForResidenceidmunicipality, Set<Patient> patientsForBirthplaceidmunicipality, Set<OrganizationUnit> organizationUnits) {
-       this.idmunicipality = idmunicipality;
+    public Municipality(Province province, String municipalityname, String municipalitystdcode, Date created, Date updated, String userupdate, boolean active, String postalcode, Set<Patient> patientsForDomicileidmunicipality, Set<Patient> patientsForResidenceidmunicipality, Set<Patient> patientsForBirthplaceidmunicipality, Set<OrganizationUnit> organizationUnits) {
        this.province = province;
        this.municipalityname = municipalityname;
        this.municipalitystdcode = municipalitystdcode;
@@ -66,7 +66,7 @@ public class Municipality  implements java.io.Serializable {
        this.organizationUnits = organizationUnits;
     }
    
-     @Id 
+     @Id @GeneratedValue(strategy=IDENTITY)
 
     
     @Column(name="idmunicipality", unique=true, nullable=false)

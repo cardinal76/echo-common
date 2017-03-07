@@ -1,5 +1,5 @@
 package it.clevercom.echo.rd.model.entity;
-// Generated 7-mar-2017 15.16.14 by Hibernate Tools 5.2.2.Final
+// Generated 7-mar-2017 16.06.19 by Hibernate Tools 5.2.2.Final
 
 
 import java.util.Date;
@@ -8,6 +8,8 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -53,15 +55,13 @@ public class OrganizationUnit  implements java.io.Serializable {
     }
 
 	
-    public OrganizationUnit(Long idorganizationunit, Date created, Date updated, String userupdate, boolean active) {
-        this.idorganizationunit = idorganizationunit;
+    public OrganizationUnit(Date created, Date updated, String userupdate, boolean active) {
         this.created = created;
         this.updated = updated;
         this.userupdate = userupdate;
         this.active = active;
     }
-    public OrganizationUnit(Long idorganizationunit, Municipality municipality, OrganizationUnit organizationUnit, String name, String description, String address, String telephone, String email, String fax, String website, String type, Date created, Date updated, String userupdate, boolean active, String code, Set<Order> ordersForOriginorganizationunitid, Set<Patient> patientsForIdintorganizationunit, Set<BurnRobot> burnRobots, Set<Order> ordersForTargetorganizationunitid, Set<Patient> patientsForIdextorganizationunit, Set<Modality> modalities, Set<OrganizationUnit> organizationUnits) {
-       this.idorganizationunit = idorganizationunit;
+    public OrganizationUnit(Municipality municipality, OrganizationUnit organizationUnit, String name, String description, String address, String telephone, String email, String fax, String website, String type, Date created, Date updated, String userupdate, boolean active, String code, Set<Order> ordersForOriginorganizationunitid, Set<Patient> patientsForIdintorganizationunit, Set<BurnRobot> burnRobots, Set<Order> ordersForTargetorganizationunitid, Set<Patient> patientsForIdextorganizationunit, Set<Modality> modalities, Set<OrganizationUnit> organizationUnits) {
        this.municipality = municipality;
        this.organizationUnit = organizationUnit;
        this.name = name;
@@ -86,7 +86,7 @@ public class OrganizationUnit  implements java.io.Serializable {
        this.organizationUnits = organizationUnits;
     }
    
-     @Id 
+     @Id @GeneratedValue(strategy=IDENTITY)
 
     
     @Column(name="idorganizationunit", unique=true, nullable=false)

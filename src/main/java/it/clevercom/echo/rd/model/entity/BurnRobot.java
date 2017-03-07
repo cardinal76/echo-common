@@ -1,11 +1,13 @@
 package it.clevercom.echo.rd.model.entity;
-// Generated 7-mar-2017 15.16.14 by Hibernate Tools 5.2.2.Final
+// Generated 7-mar-2017 16.06.19 by Hibernate Tools 5.2.2.Final
 
 
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -37,16 +39,14 @@ public class BurnRobot  implements java.io.Serializable {
     }
 
 	
-    public BurnRobot(Long idburnrobot, String name, Date created, Date updated, String userupdate, boolean active) {
-        this.idburnrobot = idburnrobot;
+    public BurnRobot(String name, Date created, Date updated, String userupdate, boolean active) {
         this.name = name;
         this.created = created;
         this.updated = updated;
         this.userupdate = userupdate;
         this.active = active;
     }
-    public BurnRobot(Long idburnrobot, OrganizationUnit organizationUnit, String name, String hostname, String ipaddress, String uri, Date created, Date updated, String userupdate, boolean active) {
-       this.idburnrobot = idburnrobot;
+    public BurnRobot(OrganizationUnit organizationUnit, String name, String hostname, String ipaddress, String uri, Date created, Date updated, String userupdate, boolean active) {
        this.organizationUnit = organizationUnit;
        this.name = name;
        this.hostname = hostname;
@@ -58,7 +58,7 @@ public class BurnRobot  implements java.io.Serializable {
        this.active = active;
     }
    
-     @Id 
+     @Id @GeneratedValue(strategy=IDENTITY)
 
     
     @Column(name="idburnrobot", unique=true, nullable=false)

@@ -1,5 +1,5 @@
 package it.clevercom.echo.rd.model.entity;
-// Generated 7-mar-2017 15.16.14 by Hibernate Tools 5.2.2.Final
+// Generated 7-mar-2017 16.06.19 by Hibernate Tools 5.2.2.Final
 
 
 import java.util.Date;
@@ -8,6 +8,8 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -44,8 +46,7 @@ public class WorkReport  implements java.io.Serializable {
     }
 
 	
-    public WorkReport(Long idworkreport, WorkSession workSession, WorkStatus workStatus, WorkTask workTask, Date creationdate, String body, Date created, Date updated, String userupdate, boolean active) {
-        this.idworkreport = idworkreport;
+    public WorkReport(WorkSession workSession, WorkStatus workStatus, WorkTask workTask, Date creationdate, String body, Date created, Date updated, String userupdate, boolean active) {
         this.workSession = workSession;
         this.workStatus = workStatus;
         this.workTask = workTask;
@@ -56,8 +57,7 @@ public class WorkReport  implements java.io.Serializable {
         this.userupdate = userupdate;
         this.active = active;
     }
-    public WorkReport(Long idworkreport, WorkSession workSession, WorkStatus workStatus, WorkTask workTask, Long accessionnumber, Date creationdate, Date completiondate, String body, Date created, Date updated, String userupdate, boolean active, Set<WorkReportLog> workReportLogs, Set<WorkReportUser> workReportUsers) {
-       this.idworkreport = idworkreport;
+    public WorkReport(WorkSession workSession, WorkStatus workStatus, WorkTask workTask, Long accessionnumber, Date creationdate, Date completiondate, String body, Date created, Date updated, String userupdate, boolean active, Set<WorkReportLog> workReportLogs, Set<WorkReportUser> workReportUsers) {
        this.workSession = workSession;
        this.workStatus = workStatus;
        this.workTask = workTask;
@@ -73,7 +73,7 @@ public class WorkReport  implements java.io.Serializable {
        this.workReportUsers = workReportUsers;
     }
    
-     @Id 
+     @Id @GeneratedValue(strategy=IDENTITY)
 
     
     @Column(name="idworkreport", unique=true, nullable=false)

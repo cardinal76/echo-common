@@ -1,11 +1,13 @@
 package it.clevercom.echo.rd.model.entity;
-// Generated 7-mar-2017 15.16.14 by Hibernate Tools 5.2.2.Final
+// Generated 7-mar-2017 16.06.19 by Hibernate Tools 5.2.2.Final
 
 
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -36,16 +38,14 @@ public class AppSetting  implements java.io.Serializable {
     }
 
 	
-    public AppSetting(Long idsetting, String key, String value, Date created, Date updated, boolean active) {
-        this.idsetting = idsetting;
+    public AppSetting(String key, String value, Date created, Date updated, boolean active) {
         this.key = key;
         this.value = value;
         this.created = created;
         this.updated = updated;
         this.active = active;
     }
-    public AppSetting(Long idsetting, User user, String key, String value, Date created, Date updated, String userupdate, boolean active, String group) {
-       this.idsetting = idsetting;
+    public AppSetting(User user, String key, String value, Date created, Date updated, String userupdate, boolean active, String group) {
        this.user = user;
        this.key = key;
        this.value = value;
@@ -56,7 +56,7 @@ public class AppSetting  implements java.io.Serializable {
        this.group = group;
     }
    
-     @Id 
+     @Id @GeneratedValue(strategy=IDENTITY)
 
     
     @Column(name="idsetting", unique=true, nullable=false)

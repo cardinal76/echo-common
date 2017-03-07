@@ -1,5 +1,5 @@
 package it.clevercom.echo.rd.model.entity;
-// Generated 7-mar-2017 15.16.14 by Hibernate Tools 5.2.2.Final
+// Generated 7-mar-2017 16.06.19 by Hibernate Tools 5.2.2.Final
 
 
 import java.util.Date;
@@ -8,6 +8,8 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -40,8 +42,7 @@ public class WorkSession  implements java.io.Serializable {
     }
 
 	
-    public WorkSession(Long idworksession, Patient patient, WorkStatus workStatus, Date created, Date updated, String userupdate, boolean active) {
-        this.idworksession = idworksession;
+    public WorkSession(Patient patient, WorkStatus workStatus, Date created, Date updated, String userupdate, boolean active) {
         this.patient = patient;
         this.workStatus = workStatus;
         this.created = created;
@@ -49,8 +50,7 @@ public class WorkSession  implements java.io.Serializable {
         this.userupdate = userupdate;
         this.active = active;
     }
-    public WorkSession(Long idworksession, Patient patient, WorkStatus workStatus, Date created, Date updated, String userupdate, boolean active, Set<WorkReport> workReports, Set<WorkTask> workTasks, Set<Order> orders) {
-       this.idworksession = idworksession;
+    public WorkSession(Patient patient, WorkStatus workStatus, Date created, Date updated, String userupdate, boolean active, Set<WorkReport> workReports, Set<WorkTask> workTasks, Set<Order> orders) {
        this.patient = patient;
        this.workStatus = workStatus;
        this.created = created;
@@ -62,7 +62,7 @@ public class WorkSession  implements java.io.Serializable {
        this.orders = orders;
     }
    
-     @Id 
+     @Id @GeneratedValue(strategy=IDENTITY)
 
     
     @Column(name="idworksession", unique=true, nullable=false)

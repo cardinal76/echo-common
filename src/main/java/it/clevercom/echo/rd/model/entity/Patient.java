@@ -1,5 +1,5 @@
 package it.clevercom.echo.rd.model.entity;
-// Generated 7-mar-2017 15.16.14 by Hibernate Tools 5.2.2.Final
+// Generated 7-mar-2017 16.06.19 by Hibernate Tools 5.2.2.Final
 
 
 import java.util.Date;
@@ -8,6 +8,8 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -58,15 +60,13 @@ public class Patient  implements java.io.Serializable {
     }
 
 	
-    public Patient(Long idpatient, Date created, Date updated, String userupdate, boolean active) {
-        this.idpatient = idpatient;
+    public Patient(Date created, Date updated, String userupdate, boolean active) {
         this.created = created;
         this.updated = updated;
         this.userupdate = userupdate;
         this.active = active;
     }
-    public Patient(Long idpatient, Citizenship citizenship, Country countryByDomicileidcountry, Country countryByResidenceidcountry, Country countryByBirthplaceidcountry, Maritalstatus maritalstatus, Municipality municipalityByDomicileidmunicipality, Municipality municipalityByResidenceidmunicipality, Municipality municipalityByBirthplaceidmunicipality, OrganizationUnit organizationUnitByIdintorganizationunit, OrganizationUnit organizationUnitByIdextorganizationunit, String name, String surname, Date dateofbirth, String gender, String residencestreetaddress, String domicilestreetaddress, Date deathdate, String taxcode, String phonenumber, Date created, Date updated, String userupdate, boolean active, String email, Set<Hl7Patient> hl7Patients, Set<PatientCodingActor> patientCodingActors, Set<WorkSession> workSessions) {
-       this.idpatient = idpatient;
+    public Patient(Citizenship citizenship, Country countryByDomicileidcountry, Country countryByResidenceidcountry, Country countryByBirthplaceidcountry, Maritalstatus maritalstatus, Municipality municipalityByDomicileidmunicipality, Municipality municipalityByResidenceidmunicipality, Municipality municipalityByBirthplaceidmunicipality, OrganizationUnit organizationUnitByIdintorganizationunit, OrganizationUnit organizationUnitByIdextorganizationunit, String name, String surname, Date dateofbirth, String gender, String residencestreetaddress, String domicilestreetaddress, Date deathdate, String taxcode, String phonenumber, Date created, Date updated, String userupdate, boolean active, String email, Set<Hl7Patient> hl7Patients, Set<PatientCodingActor> patientCodingActors, Set<WorkSession> workSessions) {
        this.citizenship = citizenship;
        this.countryByDomicileidcountry = countryByDomicileidcountry;
        this.countryByResidenceidcountry = countryByResidenceidcountry;
@@ -96,7 +96,7 @@ public class Patient  implements java.io.Serializable {
        this.workSessions = workSessions;
     }
    
-     @Id 
+     @Id @GeneratedValue(strategy=IDENTITY)
 
     
     @Column(name="idpatient", unique=true, nullable=false)

@@ -1,5 +1,5 @@
 package it.clevercom.echo.rd.model.entity;
-// Generated 7-mar-2017 15.16.14 by Hibernate Tools 5.2.2.Final
+// Generated 7-mar-2017 16.06.19 by Hibernate Tools 5.2.2.Final
 
 
 import java.util.Date;
@@ -8,6 +8,8 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -39,15 +41,13 @@ public class Province  implements java.io.Serializable {
     }
 
 	
-    public Province(Long idprovince, Date created, Date updated, String userupdate, boolean active) {
-        this.idprovince = idprovince;
+    public Province(Date created, Date updated, String userupdate, boolean active) {
         this.created = created;
         this.updated = updated;
         this.userupdate = userupdate;
         this.active = active;
     }
-    public Province(Long idprovince, Region region, String provincename, String provincestdcode, Date created, Date updated, String userupdate, boolean active, Set<Municipality> municipalities) {
-       this.idprovince = idprovince;
+    public Province(Region region, String provincename, String provincestdcode, Date created, Date updated, String userupdate, boolean active, Set<Municipality> municipalities) {
        this.region = region;
        this.provincename = provincename;
        this.provincestdcode = provincestdcode;
@@ -58,7 +58,7 @@ public class Province  implements java.io.Serializable {
        this.municipalities = municipalities;
     }
    
-     @Id 
+     @Id @GeneratedValue(strategy=IDENTITY)
 
     
     @Column(name="idprovince", unique=true, nullable=false)

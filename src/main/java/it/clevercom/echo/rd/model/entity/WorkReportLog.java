@@ -1,11 +1,13 @@
 package it.clevercom.echo.rd.model.entity;
-// Generated 7-mar-2017 15.16.14 by Hibernate Tools 5.2.2.Final
+// Generated 7-mar-2017 16.06.19 by Hibernate Tools 5.2.2.Final
 
 
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -40,8 +42,7 @@ public class WorkReportLog  implements java.io.Serializable {
     }
 
 	
-    public WorkReportLog(Long idworkreportlog, WorkReport workReport, Long idworksession, String statuscode, Date creationdate, String body, Long idworktask, Date created, Date updated, String userupdate, boolean active) {
-        this.idworkreportlog = idworkreportlog;
+    public WorkReportLog(WorkReport workReport, Long idworksession, String statuscode, Date creationdate, String body, Long idworktask, Date created, Date updated, String userupdate, boolean active) {
         this.workReport = workReport;
         this.idworksession = idworksession;
         this.statuscode = statuscode;
@@ -53,8 +54,7 @@ public class WorkReportLog  implements java.io.Serializable {
         this.userupdate = userupdate;
         this.active = active;
     }
-    public WorkReportLog(Long idworkreportlog, WorkReport workReport, Long idworksession, Long accessionnumber, String statuscode, Date creationdate, Date completiondate, String body, Long idworktask, Date created, Date updated, String userupdate, boolean active) {
-       this.idworkreportlog = idworkreportlog;
+    public WorkReportLog(WorkReport workReport, Long idworksession, Long accessionnumber, String statuscode, Date creationdate, Date completiondate, String body, Long idworktask, Date created, Date updated, String userupdate, boolean active) {
        this.workReport = workReport;
        this.idworksession = idworksession;
        this.accessionnumber = accessionnumber;
@@ -69,7 +69,7 @@ public class WorkReportLog  implements java.io.Serializable {
        this.active = active;
     }
    
-     @Id 
+     @Id @GeneratedValue(strategy=IDENTITY)
 
     
     @Column(name="idworkreportlog", unique=true, nullable=false)

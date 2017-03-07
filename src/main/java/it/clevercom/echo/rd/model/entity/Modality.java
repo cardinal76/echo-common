@@ -1,5 +1,5 @@
 package it.clevercom.echo.rd.model.entity;
-// Generated 7-mar-2017 15.16.14 by Hibernate Tools 5.2.2.Final
+// Generated 7-mar-2017 16.06.19 by Hibernate Tools 5.2.2.Final
 
 
 import java.util.Date;
@@ -8,6 +8,8 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -40,8 +42,7 @@ public class Modality  implements java.io.Serializable {
     }
 
 	
-    public Modality(Long idmodality, OrganizationUnit organizationUnit, String name, Date created, Date updated, String userupdate, boolean active) {
-        this.idmodality = idmodality;
+    public Modality(OrganizationUnit organizationUnit, String name, Date created, Date updated, String userupdate, boolean active) {
         this.organizationUnit = organizationUnit;
         this.name = name;
         this.created = created;
@@ -49,8 +50,7 @@ public class Modality  implements java.io.Serializable {
         this.userupdate = userupdate;
         this.active = active;
     }
-    public Modality(Long idmodality, OrganizationUnit organizationUnit, String name, String description, Date created, Date updated, String userupdate, boolean active, Set<ModalityService> modalityServices, Set<WorkTask> workTasks) {
-       this.idmodality = idmodality;
+    public Modality(OrganizationUnit organizationUnit, String name, String description, Date created, Date updated, String userupdate, boolean active, Set<ModalityService> modalityServices, Set<WorkTask> workTasks) {
        this.organizationUnit = organizationUnit;
        this.name = name;
        this.description = description;
@@ -62,7 +62,7 @@ public class Modality  implements java.io.Serializable {
        this.workTasks = workTasks;
     }
    
-     @Id 
+     @Id @GeneratedValue(strategy=IDENTITY)
 
     
     @Column(name="idmodality", unique=true, nullable=false)
