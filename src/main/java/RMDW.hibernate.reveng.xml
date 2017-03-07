@@ -2,41 +2,120 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
 
 <hibernate-reverse-engineering>
-  <table-filter match-schema="rmdw" match-name="app_setting"/>
-  <table-filter match-schema="rmdw" match-name="body_apparatus"/>
-  <table-filter match-schema="rmdw" match-name="burn_robot"/>
-  <table-filter match-schema="rmdw" match-name="citizenship"/>
-  <table-filter match-schema="rmdw" match-name="coding_actor"/>
-  <table-filter match-schema="rmdw" match-name="country"/>
-  <table-filter match-schema="rmdw" match-name="hl7_inbound_message"/>
-  <table-filter match-schema="rmdw" match-name="hl7_order"/>
-  <table-filter match-schema="rmdw" match-name="hl7_outbound_message"/>
-  <table-filter match-schema="rmdw" match-name="hl7_patient"/>
-  <table-filter match-schema="rmdw" match-name="icd9_patology"/>
-  <table-filter match-schema="rmdw" match-name="icd9_patology_group"/>
-  <table-filter match-schema="rmdw" match-name="maritalstatus"/>
-  <table-filter match-schema="rmdw" match-name="modality"/>
-  <table-filter match-schema="rmdw" match-name="modality_service"/>
-  <table-filter match-schema="rmdw" match-name="modality_type"/>
-  <table-filter match-schema="rmdw" match-name="municipality"/>
-  <table-filter match-schema="rmdw" match-name="order"/>
-  <table-filter match-schema="rmdw" match-name="order_log"/>
-  <table-filter match-schema="rmdw" match-name="order_service"/>
-  <table-filter match-schema="rmdw" match-name="organization_unit"/>
-  <table-filter match-schema="rmdw" match-name="patient"/>
-  <table-filter match-schema="rmdw" match-name="patient_coding_actor"/>
-  <table-filter match-schema="rmdw" match-name="phrase_book"/>
-  <table-filter match-schema="rmdw" match-name="province"/>
-  <table-filter match-schema="rmdw" match-name="region"/>
-  <table-filter match-schema="rmdw" match-name="service"/>
-  <table-filter match-schema="rmdw" match-name="service_coding_actor"/>
-  <table-filter match-schema="rmdw" match-name="user"/>
-  <table-filter match-schema="rmdw" match-name="work_priority"/>
-  <table-filter match-schema="rmdw" match-name="work_report"/>
-  <table-filter match-schema="rmdw" match-name="work_report_log"/>
-  <table-filter match-schema="rmdw" match-name="work_report_user"/>
-  <table-filter match-schema="rmdw" match-name="work_session"/>
-  <table-filter match-schema="rmdw" match-name="work_status"/>
-  <table-filter match-schema="rmdw" match-name="work_task"/>
-  <table-filter match-schema="rmdw" match-name="work_task_log"/>
+	<type-mapping>
+		<sql-type jdbc-type="BIGINT" hibernate-type="java.lang.Long"></sql-type>
+	</type-mapping>
+	
+	<table-filter match-schema="rmdw" match-name="rd_app_setting" />
+	<table-filter match-schema="rmdw" match-name="rd_body_apparatus" />
+	<table-filter match-schema="rmdw" match-name="rd_burn_robot" />
+	<table-filter match-schema="rmdw" match-name="rd_citizenship" />
+	<table-filter match-schema="rmdw" match-name="rd_coding_actor" />
+	<table-filter match-schema="rmdw" match-name="rd_country" />
+	<table-filter match-schema="rmdw" match-name="rd_hl7_inbound_message" />
+	<table-filter match-schema="rmdw" match-name="rd_hl7_order" />
+	<table-filter match-schema="rmdw" match-name="rd_hl7_outbound_message" />
+	<table-filter match-schema="rmdw" match-name="rd_hl7_patient" />
+	<table-filter match-schema="rmdw" match-name="rd_icd9_patology" />
+	<table-filter match-schema="rmdw" match-name="rd_icd9_patology_group" />
+	<table-filter match-schema="rmdw" match-name="rd_maritalstatus" />
+	<table-filter match-schema="rmdw" match-name="rd_modality" />
+	<table-filter match-schema="rmdw" match-name="rd_modality_service" />
+	<table-filter match-schema="rmdw" match-name="rd_modality_type" />
+	<table-filter match-schema="rmdw" match-name="rd_municipality" />
+	<table-filter match-schema="rmdw" match-name="rd_order" />
+	<table-filter match-schema="rmdw" match-name="rd_order_log" />
+	<table-filter match-schema="rmdw" match-name="rd_order_service" />
+	<table-filter match-schema="rmdw" match-name="rd_organization_unit" />
+	<table-filter match-schema="rmdw" match-name="rd_patient" />
+	<table-filter match-schema="rmdw" match-name="rd_patient_coding_actor" />
+	<table-filter match-schema="rmdw" match-name="rd_phrase_book" />
+	<table-filter match-schema="rmdw" match-name="rd_province" />
+	<table-filter match-schema="rmdw" match-name="rd_region" />
+	<table-filter match-schema="rmdw" match-name="rd_service" />
+	<table-filter match-schema="rmdw" match-name="rd_service_coding_actor" />
+	<table-filter match-schema="rmdw" match-name="rd_user" />
+	<table-filter match-schema="rmdw" match-name="rd_work_priority" />
+	<table-filter match-schema="rmdw" match-name="rd_work_report" />
+	<table-filter match-schema="rmdw" match-name="rd_work_report_log" />
+	<table-filter match-schema="rmdw" match-name="rd_work_report_user" />
+	<table-filter match-schema="rmdw" match-name="rd_work_session" />
+	<table-filter match-schema="rmdw" match-name="rd_work_status" />
+	<table-filter match-schema="rmdw" match-name="rd_work_task" />
+	<table-filter match-schema="rmdw" match-name="rd_work_task_log" />
+
+<!-- 	<table schema="rmdw" name="rd_user" -->
+<!-- 		class="it.clevercom.echo.rd.model.entity.User" /> -->
+<!-- 	<table schema="rmdw" name="rd_body_apparatus" -->
+<!-- 		class="it.clevercom.echo.rd.model.entity.BodyApparatus" /> -->
+<!-- 	<table schema="rmdw" name="rd_burn_robot" -->
+<!-- 		class="it.clevercom.echo.rd.model.entity.BurnRobot" /> -->
+<!-- 	<table schema="rmdw" name="rd_citizenship" -->
+<!-- 		class="it.clevercom.echo.rd.model.entity.Citizenship" /> -->
+<!-- 	<table schema="rmdw" name="rd_coding_actor" -->
+<!-- 		class="it.clevercom.echo.rd.model.entity.CodingActor" /> -->
+<!-- 	<table schema="rmdw" name="rd_country" -->
+<!-- 		class="it.clevercom.echo.rd.model.entity.Country" /> -->
+<!-- 	<table schema="rmdw" name="rd_hl7_inbound_message" -->
+<!-- 		class="it.clevercom.echo.rd.model.entity.Hl7InboundMessage" /> -->
+<!-- 	<table schema="rmdw" name="rd_hl7_order" -->
+<!-- 		class="it.clevercom.echo.rd.model.entity.Hl7Order" /> -->
+<!-- 	<table schema="rmdw" name="rd_hl7_outbound_message" -->
+<!-- 		class="it.clevercom.echo.rd.model.entity.Hl7OutboundMessage" /> -->
+<!-- 	<table schema="rmdw" name="rd_hl7_patient" -->
+<!-- 		class="it.clevercom.echo.rd.model.entity.Hl7Patient" /> -->
+<!-- 	<table schema="rmdw" name="rd_icd9_patology" -->
+<!-- 		class="it.clevercom.echo.rd.model.entity.Icd9Patology" /> -->
+<!-- 	<table schema="rmdw" name="rd_icd9_patology_group" -->
+<!-- 		class="it.clevercom.echo.rd.model.entity.Icd9PatologyGroup" /> -->
+<!-- 	<table schema="rmdw" name="rd_maritalstatus" -->
+<!-- 		class="it.clevercom.echo.rd.model.entity.Maritalstatus" /> -->
+<!-- 	<table schema="rmdw" name="rd_modality" -->
+<!-- 		class="it.clevercom.echo.rd.model.entity.Modality" /> -->
+<!-- 	<table schema="rmdw" name="rd_modality_service" -->
+<!-- 		class="it.clevercom.echo.rd.model.entity.ModalityService" /> -->
+<!-- 	<table schema="rmdw" name="rd_modality_type" -->
+<!-- 		class="it.clevercom.echo.rd.model.entity.ModalityType" /> -->
+<!-- 	<table schema="rmdw" name="rd_municipality" -->
+<!-- 		class="it.clevercom.echo.rd.model.entity.Municipality" /> -->
+<!-- 	<table schema="rmdw" name="rd_order" -->
+<!-- 		class="it.clevercom.echo.rd.model.entity.Order" /> -->
+<!-- 	<table schema="rmdw" name="rd_order_log" -->
+<!-- 		class="it.clevercom.echo.rd.model.entity.OrderLog" /> -->
+<!-- 	<table schema="rmdw" name="rd_order_service" -->
+<!-- 		class="it.clevercom.echo.rd.model.entity.OrderService" /> -->
+<!-- 	<table schema="rmdw" name="rd_organization_unit" -->
+<!-- 		class="it.clevercom.echo.rd.model.entity.OrganizationUnit" /> -->
+<!-- 	<table schema="rmdw" name="rd_patient" -->
+<!-- 		class="it.clevercom.echo.rd.model.entity.Patient" /> -->
+<!-- 	<table schema="rmdw" name="rd_patient_coding_actor" -->
+<!-- 		class="it.clevercom.echo.rd.model.entity.PatientCodingActor" /> -->
+<!-- 	<table schema="rmdw" name="rd_phrase_book" -->
+<!-- 		class="it.clevercom.echo.rd.model.entity.PhraseBook" /> -->
+<!-- 	<table schema="rmdw" name="rd_province" -->
+<!-- 		class="it.clevercom.echo.rd.model.entity.Province" /> -->
+<!-- 	<table schema="rmdw" name="rd_region" -->
+<!-- 		class="it.clevercom.echo.rd.model.entity.Region" /> -->
+<!-- 	<table schema="rmdw" name="rd_service" -->
+<!-- 		class="it.clevercom.echo.rd.model.entity.Service" /> -->
+<!-- 	<table schema="rmdw" name="rd_service_coding_actor" -->
+<!-- 		class="it.clevercom.echo.rd.model.entity.ServiceCodingActor" /> -->
+<!-- 	<table schema="rmdw" name="rd_work_priority" -->
+<!-- 		class="it.clevercom.echo.rd.model.entity.WorkPriority" /> -->
+<!-- 	<table schema="rmdw" name="rd_work_report" -->
+<!-- 		class="it.clevercom.echo.rd.model.entity.WorkReport" /> -->
+<!-- 	<table schema="rmdw" name="rd_work_report_log" -->
+<!-- 		class="it.clevercom.echo.rd.model.entity.WorkReportLog" /> -->
+<!-- 	<table schema="rmdw" name="rd_work_report_user" -->
+<!-- 		class="it.clevercom.echo.rd.model.entity.WorkReportUser" /> -->
+<!-- 	<table schema="rmdw" name="rd_work_session" -->
+<!-- 		class="it.clevercom.echo.rd.model.entity.WorkSession" /> -->
+<!-- 	<table schema="rmdw" name="rd_work_status" -->
+<!-- 		class="it.clevercom.echo.rd.model.entity.WorkStatus" /> -->
+<!-- 	<table schema="rmdw" name="rd_work_task" -->
+<!-- 		class="it.clevercom.echo.rd.model.entity.WorkTask" /> -->
+<!-- 	<table schema="rmdw" name="rd_work_task_log" -->
+<!-- 		class="it.clevercom.echo.rd.model.entity.WorkTaskLog" /> -->
+<!-- 	<table schema="rmdw" name="rd_app_setting" -->
+<!-- 		class="it.clevercom.echo.rd.model.entity.AppSetting" /> -->
 </hibernate-reverse-engineering>
