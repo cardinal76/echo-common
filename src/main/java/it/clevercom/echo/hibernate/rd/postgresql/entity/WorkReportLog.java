@@ -1,5 +1,5 @@
 package it.clevercom.echo.hibernate.rd.postgresql.entity;
-// Generated 8-mar-2017 10.59.59 by Hibernate Tools 5.2.2.Final
+// Generated 8-mar-2017 17.12.23 by Hibernate Tools 5.2.2.Final
 
 
 import java.util.Date;
@@ -37,13 +37,13 @@ public class WorkReportLog  implements java.io.Serializable {
      private Date created;
      private Date updated;
      private String userupdate;
-     private boolean active;
+     private Boolean active;
 
     public WorkReportLog() {
     }
 
 	
-    public WorkReportLog(WorkReport workReport, Long idworksession, String statuscode, Date creationdate, String body, Long idworktask, Date created, Date updated, String userupdate, boolean active) {
+    public WorkReportLog(WorkReport workReport, Long idworksession, String statuscode, Date creationdate, String body, Long idworktask, Date created, Date updated, String userupdate, Boolean active) {
         this.workReport = workReport;
         this.idworksession = idworksession;
         this.statuscode = statuscode;
@@ -55,7 +55,7 @@ public class WorkReportLog  implements java.io.Serializable {
         this.userupdate = userupdate;
         this.active = active;
     }
-    public WorkReportLog(WorkReport workReport, Long idworksession, Long accessionnumber, String statuscode, Date creationdate, Date completiondate, String body, Long idworktask, Date created, Date updated, String userupdate, boolean active) {
+    public WorkReportLog(WorkReport workReport, Long idworksession, Long accessionnumber, String statuscode, Date creationdate, Date completiondate, String body, Long idworktask, Date created, Date updated, String userupdate, Boolean active) {
        this.workReport = workReport;
        this.idworksession = idworksession;
        this.accessionnumber = accessionnumber;
@@ -194,11 +194,11 @@ public class WorkReportLog  implements java.io.Serializable {
 
     
     @Column(name="active", nullable=false)
-    public boolean isActive() {
+    public Boolean getActive() {
         return this.active;
     }
     
-    public void setActive(boolean active) {
+    public void setActive(Boolean active) {
         this.active = active;
     }
 

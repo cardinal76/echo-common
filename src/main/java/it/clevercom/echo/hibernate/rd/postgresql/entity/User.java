@@ -1,5 +1,5 @@
 package it.clevercom.echo.hibernate.rd.postgresql.entity;
-// Generated 8-mar-2017 10.59.59 by Hibernate Tools 5.2.2.Final
+// Generated 8-mar-2017 17.12.23 by Hibernate Tools 5.2.2.Final
 
 
 import java.util.Date;
@@ -38,7 +38,7 @@ public class User  implements java.io.Serializable {
      private Date created;
      private Date updated;
      private String userupdate;
-     private boolean active;
+     private Boolean active;
      private String alternativephonenumber;
      private String email;
      private Set<AppSetting> appSettings = new HashSet<AppSetting>(0);
@@ -50,7 +50,7 @@ public class User  implements java.io.Serializable {
     }
 
 	
-    public User(String username, String type, String name, String surname, String gender, Date created, Date updated, String userupdate, boolean active) {
+    public User(String username, String type, String name, String surname, String gender, Date created, Date updated, String userupdate, Boolean active) {
         this.username = username;
         this.type = type;
         this.name = name;
@@ -61,7 +61,7 @@ public class User  implements java.io.Serializable {
         this.userupdate = userupdate;
         this.active = active;
     }
-    public User(String username, String type, String name, String surname, String gender, String taxcode, Date birthdate, String phonenumber, Date created, Date updated, String userupdate, boolean active, String alternativephonenumber, String email, Set<AppSetting> appSettings, Set<PhraseBook> phraseBooks, Set<WorkReportUser> workReportUsers, Set<WorkTask> workTasks) {
+    public User(String username, String type, String name, String surname, String gender, String taxcode, Date birthdate, String phonenumber, Date created, Date updated, String userupdate, Boolean active, String alternativephonenumber, String email, Set<AppSetting> appSettings, Set<PhraseBook> phraseBooks, Set<WorkReportUser> workReportUsers, Set<WorkTask> workTasks) {
        this.username = username;
        this.type = type;
        this.name = name;
@@ -206,11 +206,11 @@ public class User  implements java.io.Serializable {
 
     
     @Column(name="active", nullable=false)
-    public boolean isActive() {
+    public Boolean getActive() {
         return this.active;
     }
     
-    public void setActive(boolean active) {
+    public void setActive(Boolean active) {
         this.active = active;
     }
 

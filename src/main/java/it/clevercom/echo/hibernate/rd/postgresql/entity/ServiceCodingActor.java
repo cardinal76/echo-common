@@ -1,5 +1,5 @@
 package it.clevercom.echo.hibernate.rd.postgresql.entity;
-// Generated 8-mar-2017 10.59.59 by Hibernate Tools 5.2.2.Final
+// Generated 8-mar-2017 17.12.23 by Hibernate Tools 5.2.2.Final
 
 
 import java.util.Date;
@@ -31,12 +31,12 @@ public class ServiceCodingActor  implements java.io.Serializable {
      private Date created;
      private Date updated;
      private String userupdate;
-     private boolean active;
+     private Boolean active;
 
     public ServiceCodingActor() {
     }
 
-    public ServiceCodingActor(ServiceCodingActorId id, CodingActor codingActor, Service service, String externalcode, Date created, Date updated, String userupdate, boolean active) {
+    public ServiceCodingActor(ServiceCodingActorId id, CodingActor codingActor, Service service, String externalcode, Date created, Date updated, String userupdate, Boolean active) {
        this.id = id;
        this.codingActor = codingActor;
        this.service = service;
@@ -123,11 +123,11 @@ public class ServiceCodingActor  implements java.io.Serializable {
 
     
     @Column(name="active", nullable=false)
-    public boolean isActive() {
+    public Boolean getActive() {
         return this.active;
     }
     
-    public void setActive(boolean active) {
+    public void setActive(Boolean active) {
         this.active = active;
     }
 

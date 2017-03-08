@@ -2,7 +2,11 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
 
 <hibernate-reverse-engineering>
-  <table-filter match-schema="sso" match-name="application"/>
-  <table-filter match-schema="sso" match-name="login"/>
-  <table-filter match-schema="sso" match-name="login_application"/>
+	<type-mapping>
+		<sql-type jdbc-type="BIGINT" hibernate-type="java.lang.Long"></sql-type>
+		<sql-type jdbc-type="BOOLEAN" hibernate-type="java.lang.Boolean"></sql-type>
+	</type-mapping>
+	<table-filter match-schema="sso" match-name="application" />
+	<table-filter match-schema="sso" match-name="login" />
+	<table-filter match-schema="sso" match-name="login_application" />
 </hibernate-reverse-engineering>
