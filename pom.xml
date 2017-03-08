@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>it.clevercom.echo.hibernate</groupId>
-	<artifactId>HibernateEntities</artifactId>
+	<artifactId>echo-hibernate</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>HibernateEntities</name>
+	<name>echo-hibernate</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -88,7 +88,25 @@
 					<!-- <compilerArgument>-Xlint:unchecked</compilerArgument> -->
 				</configuration>
 			</plugin>
-
+	        <plugin>
+	            <groupId>org.codehaus.mojo</groupId>
+	            <artifactId>exec-maven-plugin</artifactId>
+	            <version>1.2.1</version>
+	            <executions>
+		            <execution>
+		            	<id>postgresql-generate</id>
+		        		<configuration>
+			                <executable>mvn</executable>
+			                <arguments>
+			                    <argument>antrun:run@pg-rmdw-hbm2java</argument>
+			                    <argument>resources:copy-resources@copy-temp-pg-resources</argument>
+			                    <argument>com.google.code.maven-replacer-plugin:replacer:replace@pg-replacer</argument>
+			                    <argument>resources:copy-resources@inject-pg-resources</argument>
+			                </arguments>
+			            </configuration>    
+		            </execution>
+		        </executions>
+	        </plugin>
 			<plugin>
 				<artifactId>maven-antrun-plugin</artifactId>
 				<version>1.8</version>
@@ -104,10 +122,10 @@
 								<hibernatetool>
 									<jdbcconfiguration
 										revengfile="src/main/resources/reveng/postgresql/RMDW.hibernate.reveng.xml"
-										packagename="it.clevercom.echo.rd.postgresql.entity"
+										packagename="it.clevercom.echo.hibernate.rd.postgresql.entity"
 										detectmanytomany="true"
 										configurationfile="src/main/resources/hibernate-configuration/postgresql/RMDW.hibernate.cfg.xml"
-										reversestrategy="it.clevercom.echo.rd.reveng.strategy.Custom_RMDW_Strategy" />
+										reversestrategy="it.clevercom.echo.hibernate.rd.reveng.strategy.Custom_RMDW_Strategy" />
 									<hbm2java destdir="src/main/java" jdk5="true" ejb3="true" />
 								</hibernatetool>
 								<echo message="End generating postgresql entities" />
@@ -177,10 +195,48 @@
 					</dependency>
 					<dependency>
 						<groupId>it.clevercom.echo.hibernate</groupId>
-						<artifactId>HibernateEntities</artifactId>
+						<artifactId>echo-hibernate</artifactId>
 						<version>${hibernate-entities.version}</version>
 					</dependency>
 				</dependencies>
+			</plugin>
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.0.2</version>
+				<executions>
+					<execution>
+						<id>copy-temp-pg-resources</id>
+						<phase>none</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${basedir}/target/pg-resources</outputDirectory>
+							<resources>
+								<resource>
+									<directory>src/main/java/it/clevercom/echo/hibernate/rd/postgresql/entity</directory>
+									<filtering>false</filtering>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+					<execution>
+						<id>inject-pg-resources</id>
+						<phase>none</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>../echo/rd-api/src/main/java/it/clevercom/echo/rd/model/entity</outputDirectory>
+							<resources>
+								<resource>
+									<directory>${basedir}/target/pg-resources</directory>
+									<filtering>false</filtering>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 			<plugin>
 				<groupId>com.google.code.maven-replacer-plugin</groupId>
@@ -195,9 +251,13 @@
 						</goals>
 						<configuration>
 							<includes>
-								<include>src/main/java/it/clevercom/echo/rd/postgresql/entity/*.java</include>
+								<include>target/pg-resources/*.java</include>
 							</includes>
 							<replacements>
+								<replacement>
+									<token>package it.clevercom.echo.hibernate.rd.postgresql.entity;</token>
+									<value>package it.clevercom.echo.rd.model.entity;</value>
+								</replacement>
 								<replacement>
 									<token>@Entity</token>
 									<valueFile>src/main/resources/replaced-code/postgresql/replaceAnnotation.txt</valueFile>
