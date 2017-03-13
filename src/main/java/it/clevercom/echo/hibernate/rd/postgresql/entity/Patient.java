@@ -1,5 +1,5 @@
 package it.clevercom.echo.hibernate.rd.postgresql.entity;
-// Generated 8-mar-2017 17.12.23 by Hibernate Tools 5.2.2.Final
+// Generated 13-mar-2017 9.59.07 by Hibernate Tools 5.2.2.Final
 
 
 import java.util.Date;
@@ -150,7 +150,7 @@ public class Patient  implements java.io.Serializable {
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="codemaritalstatus")
+    @JoinColumn(name="idmaritalstatus")
     public Maritalstatus getMaritalstatus() {
         return this.maritalstatus;
     }

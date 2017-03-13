@@ -57,6 +57,17 @@
 		</primary-key>
 	</table>
 	
+	<table name="rd_body_apparatus">
+		<primary-key>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">body_apparatus_idbodyapparatus_seq</param>
+			</generator>
+			<key-column name="idbodyapparatus"/>
+		</primary-key>
+	</table>
+	
 	<table name="rd_burn_robot">
 		<primary-key>
 			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
@@ -132,6 +143,7 @@
 	<table name="rd_hl7_patient">
 		<primary-key>
 			<key-column name="idhl7patient"/>
+			<key-column name="idauthoritynamespaceid"/>
 		</primary-key>
 	</table>
 	
@@ -146,6 +158,28 @@
 		</primary-key>
 	</table>
 	
+	<table name="rd_icd9_patology_group">
+		<primary-key>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">icd9_patology_group_idicd9patologygroup_seq</param>
+			</generator>
+			<key-column name="idicd9patologygroup"/>
+		</primary-key>
+	</table>
+	
+	<table name="rd_maritalstatus">
+		<primary-key>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">maritalstatus_idmaritalstatus_seq</param>
+			</generator>
+			<key-column name="idmaritalstatus"/>
+		</primary-key>
+	</table>
+	
 	<table name="rd_modality">
 		<primary-key>
 			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
@@ -154,6 +188,17 @@
             	<param name="sequence_name">modality_idmodality_seq</param>
 			</generator>
 			<key-column name="idmodality"/>
+		</primary-key>
+	</table>
+	
+	<table name="rd_modality_service">
+		<primary-key>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">modalityservice_idmodalityservice_seq</param>
+			</generator>
+			<key-column name="idmodalityservice"/>
 		</primary-key>
 	</table>
 	
@@ -201,6 +246,17 @@
 		</primary-key>
 	</table>
 
+	<table name="rd_order_service">
+		<primary-key>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">orderservice_idorderservice_seq</param>
+			</generator>
+			<key-column name="idorderservice"/>
+		</primary-key>
+	</table>
+
  	<table name="rd_organization_unit">
 		<primary-key>
 			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
@@ -220,6 +276,17 @@
             	<param name="sequence_name">patient_idpatient_seq</param>
 			</generator>
 			<key-column name="idpatient"/>
+		</primary-key>
+	</table>
+	
+	<table name="rd_patient_coding_actor">
+		<primary-key>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">patient_coding_actor_idpatientcodingactor_seq</param>
+			</generator>
+			<key-column name="idpatientcodingactor"/>
 		</primary-key>
 	</table>
 	
@@ -266,15 +333,26 @@
 			<key-column name="idservice"/>
 		</primary-key>
 	</table>
-	    
-	<table name="rd_user">
+	
+	<table name="rd_service_coding_actor">
 		<primary-key>
 			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
 				<param name="optimizer">none</param>
             	<param name="increment_size">1</param>
-            	<param name="sequence_name">user_iduser_seq</param>			
+            	<param name="sequence_name">service_coding_actor_idservicecodingactor_seq</param>			
             </generator>
-			<key-column name="iduser"/>
+			<key-column name="idservicecodingactor"/>
+		</primary-key>
+	</table>
+	
+	<table name="rd_work_priority">
+		<primary-key>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">workpriority_idworkpriority_seq</param>			
+            </generator>
+			<key-column name="idworkpriority"/>
 		</primary-key>
 	</table>
 	
@@ -300,6 +378,17 @@
 		</primary-key>
 	</table>
 	
+	<table name="rd_work_report_user">
+		<primary-key>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">workreportuser_idworkreportuser_seq</param>			
+            </generator>
+            <key-column name="idworkreportuser"/>
+		</primary-key>
+	</table>
+	
 	<table name="rd_work_session">
 		<primary-key>
 			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
@@ -308,6 +397,17 @@
             	<param name="sequence_name">worksession_idworksession_seq</param>			
             </generator>
 			<key-column name="idworksession"/>
+		</primary-key>
+	</table>
+	
+	<table name="rd_work_status">
+		<primary-key>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">workstatus_idworkstatus_seq</param>			
+            </generator>
+			<key-column name="idworkstatus"/>
 		</primary-key>
 	</table>
 	

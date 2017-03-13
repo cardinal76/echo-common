@@ -1,5 +1,5 @@
 package it.clevercom.echo.hibernate.rd.postgresql.entity;
-// Generated 8-mar-2017 17.12.23 by Hibernate Tools 5.2.2.Final
+// Generated 13-mar-2017 9.59.07 by Hibernate Tools 5.2.2.Final
 
 
 import java.util.Date;
@@ -123,7 +123,7 @@ public class Order  implements java.io.Serializable {
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="prioritycode", nullable=false)
+    @JoinColumn(name="idworkpriority", nullable=false)
     public WorkPriority getWorkPriority() {
         return this.workPriority;
     }
@@ -143,7 +143,7 @@ public class Order  implements java.io.Serializable {
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="statuscode", nullable=false)
+    @JoinColumn(name="idworkstatus", nullable=false)
     public WorkStatus getWorkStatus() {
         return this.workStatus;
     }
