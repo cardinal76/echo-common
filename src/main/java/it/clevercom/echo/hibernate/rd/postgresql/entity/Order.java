@@ -1,5 +1,5 @@
 package it.clevercom.echo.hibernate.rd.postgresql.entity;
-// Generated 13-mar-2017 9.59.07 by Hibernate Tools 5.2.2.Final
+// Generated 5-apr-2017 11.35.01 by Hibernate Tools 5.2.2.Final
 
 
 import java.util.Date;
@@ -31,6 +31,7 @@ public class Order  implements java.io.Serializable {
      private Long idorder;
      private OrganizationUnit organizationUnitByOriginorganizationunitid;
      private OrganizationUnit organizationUnitByTargetorganizationunitid;
+     private Patient patient;
      private WorkPriority workPriority;
      private WorkSession workSession;
      private WorkStatus workStatus;
@@ -48,6 +49,8 @@ public class Order  implements java.io.Serializable {
      private Date updated;
      private String userupdate;
      private Boolean active;
+     private String cancelreason;
+     private String identificationdocument;
      private Set<OrderLog> orderLogs = new HashSet<OrderLog>(0);
      private Set<OrderService> orderServices = new HashSet<OrderService>(0);
 
@@ -55,9 +58,9 @@ public class Order  implements java.io.Serializable {
     }
 
 	
-    public Order(WorkPriority workPriority, WorkSession workSession, WorkStatus workStatus, String acquisitionchannel, Date creationdate, Date created, Date updated, String userupdate, Boolean active) {
+    public Order(Patient patient, WorkPriority workPriority, WorkStatus workStatus, String acquisitionchannel, Date creationdate, Date created, Date updated, String userupdate, Boolean active) {
+        this.patient = patient;
         this.workPriority = workPriority;
-        this.workSession = workSession;
         this.workStatus = workStatus;
         this.acquisitionchannel = acquisitionchannel;
         this.creationdate = creationdate;
@@ -66,9 +69,10 @@ public class Order  implements java.io.Serializable {
         this.userupdate = userupdate;
         this.active = active;
     }
-    public Order(OrganizationUnit organizationUnitByOriginorganizationunitid, OrganizationUnit organizationUnitByTargetorganizationunitid, WorkPriority workPriority, WorkSession workSession, WorkStatus workStatus, String acquisitionchannel, Date creationdate, Date scheduleddate, Date acceptancedate, Long duration, String requestingphysician, String orderreason, String rejectreason, String clinicalhistory, String notes, Date created, Date updated, String userupdate, Boolean active, Set<OrderLog> orderLogs, Set<OrderService> orderServices) {
+    public Order(OrganizationUnit organizationUnitByOriginorganizationunitid, OrganizationUnit organizationUnitByTargetorganizationunitid, Patient patient, WorkPriority workPriority, WorkSession workSession, WorkStatus workStatus, String acquisitionchannel, Date creationdate, Date scheduleddate, Date acceptancedate, Long duration, String requestingphysician, String orderreason, String rejectreason, String clinicalhistory, String notes, Date created, Date updated, String userupdate, Boolean active, String cancelreason, String identificationdocument, Set<OrderLog> orderLogs, Set<OrderService> orderServices) {
        this.organizationUnitByOriginorganizationunitid = organizationUnitByOriginorganizationunitid;
        this.organizationUnitByTargetorganizationunitid = organizationUnitByTargetorganizationunitid;
+       this.patient = patient;
        this.workPriority = workPriority;
        this.workSession = workSession;
        this.workStatus = workStatus;
@@ -86,6 +90,8 @@ public class Order  implements java.io.Serializable {
        this.updated = updated;
        this.userupdate = userupdate;
        this.active = active;
+       this.cancelreason = cancelreason;
+       this.identificationdocument = identificationdocument;
        this.orderLogs = orderLogs;
        this.orderServices = orderServices;
     }
@@ -123,6 +129,16 @@ public class Order  implements java.io.Serializable {
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="idpatient", nullable=false)
+    public Patient getPatient() {
+        return this.patient;
+    }
+    
+    public void setPatient(Patient patient) {
+        this.patient = patient;
+    }
+
+@ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="idworkpriority", nullable=false)
     public WorkPriority getWorkPriority() {
         return this.workPriority;
@@ -133,7 +149,7 @@ public class Order  implements java.io.Serializable {
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="idworksession", nullable=false)
+    @JoinColumn(name="idworksession")
     public WorkSession getWorkSession() {
         return this.workSession;
     }
@@ -290,6 +306,26 @@ public class Order  implements java.io.Serializable {
     
     public void setActive(Boolean active) {
         this.active = active;
+    }
+
+    
+    @Column(name="cancelreason", length=500)
+    public String getCancelreason() {
+        return this.cancelreason;
+    }
+    
+    public void setCancelreason(String cancelreason) {
+        this.cancelreason = cancelreason;
+    }
+
+    
+    @Column(name="identificationdocument")
+    public String getIdentificationdocument() {
+        return this.identificationdocument;
+    }
+    
+    public void setIdentificationdocument(String identificationdocument) {
+        this.identificationdocument = identificationdocument;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="order")

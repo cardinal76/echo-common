@@ -1,5 +1,5 @@
 package it.clevercom.echo.hibernate.rd.postgresql.entity;
-// Generated 13-mar-2017 9.59.07 by Hibernate Tools 5.2.2.Final
+// Generated 5-apr-2017 11.35.01 by Hibernate Tools 5.2.2.Final
 
 
 import java.util.Date;
@@ -29,7 +29,7 @@ public class OrderLog  implements java.io.Serializable {
      private Order order;
      private Long idworksession;
      private Long idworkstatus;
-     private String prioritycode;
+     private Long idworkpriority;
      private String acquisitionchannel;
      private Date creationdate;
      private Date scheduleddate;
@@ -51,23 +51,19 @@ public class OrderLog  implements java.io.Serializable {
     }
 
 	
-    public OrderLog(Order order, Long idworksession, Long idworkstatus, String prioritycode, String acquisitionchannel, Date creationdate, Date created, Date updated, String userupdate, Boolean active) {
+    public OrderLog(Order order, Date creationdate, Date created, Date updated, String userupdate, Boolean active) {
         this.order = order;
-        this.idworksession = idworksession;
-        this.idworkstatus = idworkstatus;
-        this.prioritycode = prioritycode;
-        this.acquisitionchannel = acquisitionchannel;
         this.creationdate = creationdate;
         this.created = created;
         this.updated = updated;
         this.userupdate = userupdate;
         this.active = active;
     }
-    public OrderLog(Order order, Long idworksession, Long idworkstatus, String prioritycode, String acquisitionchannel, Date creationdate, Date scheduleddate, Date acceptancedate, Long duration, Long originorganizationunitid, Long targetorganizationunitid, String requestingphysician, String orderreason, String rejectreason, String clinicalhistory, String notes, Date created, Date updated, String userupdate, Boolean active) {
+    public OrderLog(Order order, Long idworksession, Long idworkstatus, Long idworkpriority, String acquisitionchannel, Date creationdate, Date scheduleddate, Date acceptancedate, Long duration, Long originorganizationunitid, Long targetorganizationunitid, String requestingphysician, String orderreason, String rejectreason, String clinicalhistory, String notes, Date created, Date updated, String userupdate, Boolean active) {
        this.order = order;
        this.idworksession = idworksession;
        this.idworkstatus = idworkstatus;
-       this.prioritycode = prioritycode;
+       this.idworkpriority = idworkpriority;
        this.acquisitionchannel = acquisitionchannel;
        this.creationdate = creationdate;
        this.scheduleddate = scheduleddate;
@@ -86,7 +82,7 @@ public class OrderLog  implements java.io.Serializable {
        this.active = active;
     }
    
-     @GenericGenerator(name="generator", strategy="org.hibernate.id.enhanced.SequenceStyleGenerator", parameters={@Parameter(name="optimizer", value="none"), @Parameter(name="sequence_name", value="order_log_idorderlog_seq"), @Parameter(name="increment_size", value="1")})@Id @GeneratedValue(generator="generator")
+     @GenericGenerator(name="generator", strategy="org.hibernate.id.enhanced.SequenceStyleGenerator", parameters={@Parameter(name="optimizer", value="none"), @Parameter(name="sequence_name", value="orderlog_idorderlog_seq"), @Parameter(name="increment_size", value="1")})@Id @GeneratedValue(generator="generator")
 
     
     @Column(name="idorderlog", unique=true, nullable=false)
@@ -109,7 +105,7 @@ public class OrderLog  implements java.io.Serializable {
     }
 
     
-    @Column(name="idworksession", nullable=false)
+    @Column(name="idworksession")
     public Long getIdworksession() {
         return this.idworksession;
     }
@@ -119,7 +115,7 @@ public class OrderLog  implements java.io.Serializable {
     }
 
     
-    @Column(name="idworkstatus", nullable=false)
+    @Column(name="idworkstatus")
     public Long getIdworkstatus() {
         return this.idworkstatus;
     }
@@ -129,17 +125,17 @@ public class OrderLog  implements java.io.Serializable {
     }
 
     
-    @Column(name="prioritycode", nullable=false, length=100)
-    public String getPrioritycode() {
-        return this.prioritycode;
+    @Column(name="idworkpriority")
+    public Long getIdworkpriority() {
+        return this.idworkpriority;
     }
     
-    public void setPrioritycode(String prioritycode) {
-        this.prioritycode = prioritycode;
+    public void setIdworkpriority(Long idworkpriority) {
+        this.idworkpriority = idworkpriority;
     }
 
     
-    @Column(name="acquisitionchannel", nullable=false, length=20)
+    @Column(name="acquisitionchannel", length=20)
     public String getAcquisitionchannel() {
         return this.acquisitionchannel;
     }

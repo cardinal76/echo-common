@@ -22,6 +22,7 @@
 	<table-filter match-schema="rmdw" match-name="rd_icd9_patology_group" />
 	<table-filter match-schema="rmdw" match-name="rd_maritalstatus" />
 	<table-filter match-schema="rmdw" match-name="rd_modality" />
+	<table-filter match-schema="rmdw" match-name="rd_modality_daily_allocation" />
 	<table-filter match-schema="rmdw" match-name="rd_modality_service" />
 	<table-filter match-schema="rmdw" match-name="rd_modality_type" />
 	<table-filter match-schema="rmdw" match-name="rd_municipality" />
@@ -191,6 +192,17 @@
 		</primary-key>
 	</table>
 	
+	<table name="rd_modality_daily_allocation">
+		<primary-key>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">modalitydailyallocation_idmodalitydailyallocation_seq</param>
+			</generator>
+			<key-column name="idmodalitydailyallocation"/>
+		</primary-key>
+	</table>
+	
 	<table name="rd_modality_service">
 		<primary-key>
 			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
@@ -240,7 +252,7 @@
 			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
 				<param name="optimizer">none</param>
             	<param name="increment_size">1</param>
-            	<param name="sequence_name">order_log_idorderlog_seq</param>
+            	<param name="sequence_name">orderlog_idorderlog_seq</param>
 			</generator>
 			<key-column name="idorderlog"/>
 		</primary-key>

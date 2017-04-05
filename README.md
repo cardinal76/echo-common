@@ -1,10 +1,11 @@
-temporary command
+Commands for entity generation:
 
-RD for postgresql:
+Generate RD entities for postgresql:
 
 mvn exec:exec@postgresql-generate
 
-mvn antrun:run@pg-rmdw-hbm2java
-mvn resources:copy-resources@copy-temp-pg-resources
-mvn com.google.code.maven-replacer-plugin:replacer:replace@pg-replacer
-mvn resources:copy-resources@inject-pg-resources
+Executes the following subcommands:
+	mvn antrun:run@pg-rmdw-hbm2java
+	mvn resources:copy-resources@copy-temp-pg-resources
+	mvn com.google.code.maven-replacer-plugin:replacer:replace@pg-replacer
+	mvn resources:copy-resources@inject-pg-resources

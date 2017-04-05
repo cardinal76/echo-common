@@ -1,5 +1,5 @@
 package it.clevercom.echo.hibernate.rd.postgresql.entity;
-// Generated 13-mar-2017 9.59.07 by Hibernate Tools 5.2.2.Final
+// Generated 5-apr-2017 11.35.01 by Hibernate Tools 5.2.2.Final
 
 
 import java.util.Date;
@@ -53,8 +53,11 @@ public class Patient  implements java.io.Serializable {
      private String userupdate;
      private Boolean active;
      private String email;
+     private String healthcode;
+     private String fullname;
      private Set<Hl7Patient> hl7Patients = new HashSet<Hl7Patient>(0);
      private Set<PatientCodingActor> patientCodingActors = new HashSet<PatientCodingActor>(0);
+     private Set<Order> orders = new HashSet<Order>(0);
      private Set<WorkSession> workSessions = new HashSet<WorkSession>(0);
 
     public Patient() {
@@ -67,7 +70,7 @@ public class Patient  implements java.io.Serializable {
         this.userupdate = userupdate;
         this.active = active;
     }
-    public Patient(Citizenship citizenship, Country countryByDomicileidcountry, Country countryByResidenceidcountry, Country countryByBirthplaceidcountry, Maritalstatus maritalstatus, Municipality municipalityByDomicileidmunicipality, Municipality municipalityByResidenceidmunicipality, Municipality municipalityByBirthplaceidmunicipality, OrganizationUnit organizationUnitByIdintorganizationunit, OrganizationUnit organizationUnitByIdextorganizationunit, String name, String surname, Date dateofbirth, String gender, String residencestreetaddress, String domicilestreetaddress, Date deathdate, String taxcode, String phonenumber, Date created, Date updated, String userupdate, Boolean active, String email, Set<Hl7Patient> hl7Patients, Set<PatientCodingActor> patientCodingActors, Set<WorkSession> workSessions) {
+    public Patient(Citizenship citizenship, Country countryByDomicileidcountry, Country countryByResidenceidcountry, Country countryByBirthplaceidcountry, Maritalstatus maritalstatus, Municipality municipalityByDomicileidmunicipality, Municipality municipalityByResidenceidmunicipality, Municipality municipalityByBirthplaceidmunicipality, OrganizationUnit organizationUnitByIdintorganizationunit, OrganizationUnit organizationUnitByIdextorganizationunit, String name, String surname, Date dateofbirth, String gender, String residencestreetaddress, String domicilestreetaddress, Date deathdate, String taxcode, String phonenumber, Date created, Date updated, String userupdate, Boolean active, String email, String healthcode, String fullname, Set<Hl7Patient> hl7Patients, Set<PatientCodingActor> patientCodingActors, Set<Order> orders, Set<WorkSession> workSessions) {
        this.citizenship = citizenship;
        this.countryByDomicileidcountry = countryByDomicileidcountry;
        this.countryByResidenceidcountry = countryByResidenceidcountry;
@@ -92,8 +95,11 @@ public class Patient  implements java.io.Serializable {
        this.userupdate = userupdate;
        this.active = active;
        this.email = email;
+       this.healthcode = healthcode;
+       this.fullname = fullname;
        this.hl7Patients = hl7Patients;
        this.patientCodingActors = patientCodingActors;
+       this.orders = orders;
        this.workSessions = workSessions;
     }
    
@@ -349,6 +355,26 @@ public class Patient  implements java.io.Serializable {
         this.email = email;
     }
 
+    
+    @Column(name="healthcode")
+    public String getHealthcode() {
+        return this.healthcode;
+    }
+    
+    public void setHealthcode(String healthcode) {
+        this.healthcode = healthcode;
+    }
+
+    
+    @Column(name="fullname")
+    public String getFullname() {
+        return this.fullname;
+    }
+    
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
+    }
+
 @OneToMany(fetch=FetchType.LAZY, mappedBy="patient")
     public Set<Hl7Patient> getHl7Patients() {
         return this.hl7Patients;
@@ -365,6 +391,15 @@ public class Patient  implements java.io.Serializable {
     
     public void setPatientCodingActors(Set<PatientCodingActor> patientCodingActors) {
         this.patientCodingActors = patientCodingActors;
+    }
+
+@OneToMany(fetch=FetchType.LAZY, mappedBy="patient")
+    public Set<Order> getOrders() {
+        return this.orders;
+    }
+    
+    public void setOrders(Set<Order> orders) {
+        this.orders = orders;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="patient")
