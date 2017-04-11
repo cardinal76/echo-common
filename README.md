@@ -1,5 +1,5 @@
 Below are listed the commands in order to generate entities with echo-hibernate plugin.
-You can generate entities for any platform module (tm=telemedicine, rd=radiology) by launching two main maven task configured for postgresql (postgresql-generate-rmdw, postgresql-generate-tmdw).
+You can generate entities for any platform module (tm=telemedicine, rd=radiology) by launching one of the two main maven task configured for postgresql (postgresql-generate-rmdw, postgresql-generate-tmdw). Entities are generated in the same project and copied to the right module folder if projects are in the same IDE workspace.
 
 a) Generate RD entities for postgresql:
 
