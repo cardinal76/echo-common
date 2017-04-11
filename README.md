@@ -1,4 +1,4 @@
-#### BASE PROJECT DESCRIPTION ####
+#### PROJECT DESCRIPTION AND CONFIGURATION ####
 
 With this project you can automatically update platform modules entities by launching a simple maven command.<br/>
 Entities are named, generated and annotated automatically. In addition to that, generated classes are copied in the right project package module. 
@@ -37,7 +37,7 @@ And add this standard portion of XML related to the sequence generator:<br/>
 		</primary-key>
 	</table>
 
-#### USAGE ####
+#### COMMAND USAGE ####
 
 You can generate entities for any platform module (tm=telemedicine, rd=radiology) by launching one of the two main maven task configured for postgresql RDBMS (postgresql-generate-rmdw, postgresql-generate-tmdw).<br/> Entities are generated in the same project and copied to the right module folder if projects are in the same IDE workspace.<br/>
 
