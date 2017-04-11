@@ -16,11 +16,11 @@ In order to run this plugin you must have the following requisites:<br/>
 In order to add a new database table in the automatic generation task you must edit the following file:<br/>
 - src/main/resources/reveng/[target-rdbms-folder]/[module].hibernate.reveng.xml<br/>
 
-You must only add:<br/>
+And add this new table name like this:<br/>
 
-	<table-filter match-schema="[schema]" match-name="[new_table_name]" /><br/>
+	<table-filter match-schema="[schema]" match-name="[new_table_name]" />
 
-and this standard portion of XML:
+And this standard portion of XML related to the sequence generator:<br/>
 
 	<table name="[new_table_name]">
 		<primary-key>
@@ -34,21 +34,22 @@ and this standard portion of XML:
 	</table>
 
 #### USAGE ####
-Below are listed the commands in order to generate entities with echo-hibernate plugin.<br>
 
-You can generate entities for any platform module (tm=telemedicine, rd=radiology) by launching one of the two main maven task configured for postgresql RDBMS (postgresql-generate-rmdw, postgresql-generate-tmdw). Entities are generated in the same project and copied to the right module folder if projects are in the same IDE workspace.
+You can generate entities for any platform module (tm=telemedicine, rd=radiology) by launching one of the two main maven task configured for postgresql RDBMS (postgresql-generate-rmdw, postgresql-generate-tmdw).<br/> Entities are generated in the same project and copied to the right module folder if projects are in the same IDE workspace.<br/>
 
-a) Generate radiology entities for postgresql (rd-api):
+Below are listed the commands that you can use from shell in order to generate entities with echo-hibernate plugin.<br/>
+
+a) Generate radiology entities for postgresql (rd-api):<br/>
 
 	mvn exec:exec@postgresql-generate-rmdw
 
-	Executes the following subcommands:
+	Previous task executes the following subcommands:
 		mvn antrun:run@pg-rmdw-hbm2java
 		mvn resources:copy-resources@copy-temp-pg-resources
 		mvn com.google.code.maven-replacer-plugin:replacer:replace@pg-replacer
 		mvn resources:copy-resources@inject-pg-resources
 		
-b) Generate telemedicine entities for postgresql (tm-api):
+b) Generate telemedicine entities for postgresql (tm-api):<br/>
 
 	mvn exec:exec@postgresql-generate-tmdw
 
