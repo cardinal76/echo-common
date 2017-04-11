@@ -1,16 +1,27 @@
- _______   ________  ___  ___  ________                 ___  ___  ___  ________  _______   ________  ________   ________  _________  _______      
-|\  ___ \ |\   ____\|\  \|\  \|\   __  \               |\  \|\  \|\  \|\   __  \|\  ___ \ |\   __  \|\   ___  \|\   __  \|\___   ___\\  ___ \     
-\ \   __/|\ \  \___|\ \  \\\  \ \  \|\  \  ____________\ \  \\\  \ \  \ \  \|\ /\ \   __/|\ \  \|\  \ \  \\ \  \ \  \|\  \|___ \  \_\ \   __/|    
- \ \  \_|/_\ \  \    \ \   __  \ \  \\\  \|\____________\ \   __  \ \  \ \   __  \ \  \_|/_\ \   _  _\ \  \\ \  \ \   __  \   \ \  \ \ \  \_|/__  
-  \ \  \_|\ \ \  \____\ \  \ \  \ \  \\\  \|____________|\ \  \ \  \ \  \ \  \|\  \ \  \_|\ \ \  \\  \\ \  \\ \  \ \  \ \  \   \ \  \ \ \  \_|\ \ 
-   \ \_______\ \_______\ \__\ \__\ \_______\              \ \__\ \__\ \__\ \_______\ \_______\ \__\\ _\\ \__\\ \__\ \__\ \__\   \ \__\ \ \_______\
-    \|_______|\|_______|\|__|\|__|\|_______|               \|__|\|__|\|__|\|_______|\|_______|\|__|\|__|\|__| \|__|\|__|\|__|    \|__|  \|_______|
-                                                                                                                                                  
-                                                                                                                                                  
-                                                                                                                                                  
-    
 #### BASE PROJECT DESCRIPTION ####
 
+With this project you can automatically update platform module entities by launching a simple maven command.
+Entities are generated automatically 
+
+In order to run this plugin you must have the following requisites:
+- Oracle Java Development Kit 8
+- Apache Maven 3.3.x or later
+- echo platform source code downloadable from <a href="http://dev.neclab.it:8181/a.matteo/echo">here</a>
+- echo-hibernate must be checked out in the same workspace as echo platform 
+
+echo [pom]
+		|
+		|--> echo-api [war]
+		|
+		|--> echo-common [jar]
+		|
+		|--> custom-api-1 [jar]
+		|
+		...
+		|
+		|--> custom-api-n [jar]
+
+In order to add a new entity to generate you must edit
 
 #### USAGE ####
 Below are listed the commands in order to generate entities with echo-hibernate plugin.<br>
