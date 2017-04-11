@@ -1,26 +1,30 @@
 #### BASE PROJECT DESCRIPTION ####
 
 With this project you can automatically update platform modules entities by launching a simple maven command.<br/>
+Entities are generated and annotated automatically. Generated classes are copied to the right project package. 
+
 Entities are generated automatically starting from:<br/>
 
-a) hibernate configuration file (one per module) placed in the src/main/resources/hibernate-configuration/[target-rdbms-folder]<br/>
-b) hibernate standard reverse engineering strategy XML (one per module) placed in the src/main/resources/reveng/[target-rdbms-folder]<br/>
-c) hibernate custom reverse engineering strategy (one per module) placed in the src/main/java/it/clevercom/echo/hibernate/[module]/reveng/strategy<br/>
+a) Hibernate configuration file (one per module) placed in the src/main/resources/hibernate-configuration/[target-rdbms-folder]<br/>
+b) Hibernate standard reverse engineering strategy XML (one per module) placed in the src/main/resources/reveng/[target-rdbms-folder]<br/>
+c) Hibernate custom reverse engineering strategy (one per module) placed in the src/main/java/it/clevercom/echo/hibernate/[module]/reveng/strategy<br/>
 
-In order to run this plugin you must have the following requisites:<br/>
+In order to run this plugin you must have the following pre-requisites:<br/>
 - Oracle Java Development Kit 8<br/>
 - Apache Maven 3.3.x or later<br/>
-- echo platform source code downloadable from gitlab <a href="http://dev.neclab.it:8181/a.matteo/echo">here</a><br/>
-- echo-hibernate must be checked out and placed in the same IDE workspace as echo platform<br/>
+- Echo platform source code (you can get it <a href="http://dev.neclab.it:8181/a.matteo/echo">here</a><br/>)
+- Echo-hibernate 
 
-In order to add a new database table in the automatic generation task you must edit the following file:<br/>
+Note: this plugin must be checked out and placed in the same IDE workspace as echo platform<br/>
+
+In order to add a new database table in the automatic generation task, you must edit the following file:<br/>
 - src/main/resources/reveng/[target-rdbms-folder]/[module].hibernate.reveng.xml<br/>
 
-And add this new table name like this:<br/>
+And add the new table name like this:<br/>
 
 	<table-filter match-schema="[schema]" match-name="[new_table_name]" />
 
-And this standard portion of XML related to the sequence generator:<br/>
+And add this standard portion of XML related to the sequence generator:<br/>
 
 	<table name="[new_table_name]">
 		<primary-key>
