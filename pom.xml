@@ -94,14 +94,26 @@
 	            <version>1.2.1</version>
 	            <executions>
 		            <execution>
-		            	<id>postgresql-generate</id>
+		            	<id>postgresql-generate-rmdw</id>
 		        		<configuration>
 			                <executable>mvn</executable>
 			                <arguments>
 			                    <argument>antrun:run@pg-rmdw-hbm2java</argument>
-			                    <argument>resources:copy-resources@copy-temp-pg-resources</argument>
-			                    <argument>com.google.code.maven-replacer-plugin:replacer:replace@pg-replacer</argument>
-			                    <argument>resources:copy-resources@inject-pg-resources</argument>
+			                    <argument>resources:copy-resources@copy-temp-rmdw-pg-resources</argument>
+			                    <argument>com.google.code.maven-replacer-plugin:replacer:replace@pg-rmdw-replacer</argument>
+			                    <argument>resources:copy-resources@inject-pg-rmdw-resources</argument>
+			                </arguments>
+			            </configuration>    
+		            </execution>
+		            <execution>
+		            	<id>postgresql-generate-tmdw</id>
+		        		<configuration>
+			                <executable>mvn</executable>
+			                <arguments>
+			                    <argument>antrun:run@pg-tmdw-hbm2java</argument>
+			                    <argument>resources:copy-resources@copy-temp-tmdw-pg-resources</argument>
+			                    <argument>com.google.code.maven-replacer-plugin:replacer:replace@pg-tmdw-replacer</argument>
+			                    <argument>resources:copy-resources@inject-pg-tmdw-resources</argument>
 			                </arguments>
 			            </configuration>    
 		            </execution>
@@ -111,12 +123,12 @@
 				<artifactId>maven-antrun-plugin</artifactId>
 				<version>1.8</version>
 				<executions>
-					<execution> <!--mvn antrun:run@hbm2java -->
+					<execution>
 						<id>pg-rmdw-hbm2java</id>
 						<phase>none</phase>
 						<configuration>
 							<target>
-								<echo message="Start generating postgresql entities .." />
+								<echo message="Start generating postgresql entities for RD module..." />
 								<taskdef name="hibernatetool" classname="org.hibernate.tool.ant.HibernateToolTask"
 									classpathref="maven.plugin.classpath" />
 								<hibernatetool>
@@ -128,7 +140,31 @@
 										reversestrategy="it.clevercom.echo.hibernate.rd.reveng.strategy.Custom_RMDW_Strategy" />
 									<hbm2java destdir="src/main/java" jdk5="true" ejb3="true" />
 								</hibernatetool>
-								<echo message="End generating postgresql entities" />
+								<echo message="End generating postgresql entities for RD module..." />
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>pg-tmdw-hbm2java</id>
+						<phase>none</phase>
+						<configuration>
+							<target>
+								<echo message="Start generating postgresql entities for TM module..." />
+								<taskdef name="hibernatetool" classname="org.hibernate.tool.ant.HibernateToolTask"
+									classpathref="maven.plugin.classpath" />
+								<hibernatetool>
+									<jdbcconfiguration
+										revengfile="src/main/resources/reveng/postgresql/TMDW.hibernate.reveng.xml"
+										packagename="it.clevercom.echo.hibernate.tm.postgresql.entity"
+										detectmanytomany="true"
+										configurationfile="src/main/resources/hibernate-configuration/postgresql/TMDW.hibernate.cfg.xml"
+										reversestrategy="it.clevercom.echo.hibernate.tm.reveng.strategy.Custom_TMDW_Strategy" />
+									<hbm2java destdir="src/main/java" jdk5="true" ejb3="true" />
+								</hibernatetool>
+								<echo message="End generating postgresql entities for TM module..." />
 							</target>
 						</configuration>
 						<goals>
@@ -205,13 +241,13 @@
 				<version>3.0.2</version>
 				<executions>
 					<execution>
-						<id>copy-temp-pg-resources</id>
+						<id>copy-temp-rmdw-pg-resources</id>
 						<phase>none</phase>
 						<goals>
 							<goal>copy-resources</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${basedir}/target/pg-resources</outputDirectory>
+							<outputDirectory>${basedir}/target/pg-resources/rmdw</outputDirectory>
 							<resources>
 								<resource>
 									<directory>src/main/java/it/clevercom/echo/hibernate/rd/postgresql/entity</directory>
@@ -221,7 +257,23 @@
 						</configuration>
 					</execution>
 					<execution>
-						<id>inject-pg-resources</id>
+						<id>copy-temp-tmdw-pg-resources</id>
+						<phase>none</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${basedir}/target/pg-resources/tmdw</outputDirectory>
+							<resources>
+								<resource>
+									<directory>src/main/java/it/clevercom/echo/hibernate/tm/postgresql/entity</directory>
+									<filtering>false</filtering>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+					<execution>
+						<id>inject-pg-rmdw-resources</id>
 						<phase>none</phase>
 						<goals>
 							<goal>copy-resources</goal>
@@ -230,7 +282,23 @@
 							<outputDirectory>../echo/rd-api/src/main/java/it/clevercom/echo/rd/model/entity</outputDirectory>
 							<resources>
 								<resource>
-									<directory>${basedir}/target/pg-resources</directory>
+									<directory>${basedir}/target/pg-resources/rmdw</directory>
+									<filtering>false</filtering>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+					<execution>
+						<id>inject-pg-tmdw-resources</id>
+						<phase>none</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>../echo/tm-api/src/main/java/it/clevercom/echo/tm/model/entity</outputDirectory>
+							<resources>
+								<resource>
+									<directory>${basedir}/target/pg-resources/tmdw</directory>
 									<filtering>false</filtering>
 								</resource>
 							</resources>
@@ -244,19 +312,48 @@
 				<version>1.5.2</version>
 				<executions>
 					<execution>
-						<id>pg-replacer</id>
+						<id>pg-rmdw-replacer</id>
 						<phase>none</phase>
 						<goals>
 							<goal>replace</goal>
 						</goals>
 						<configuration>
 							<includes>
-								<include>target/pg-resources/*.java</include>
+								<include>target/pg-resources/rmdw/*.java</include>
 							</includes>
 							<replacements>
 								<replacement>
 									<token>package it.clevercom.echo.hibernate.rd.postgresql.entity;</token>
 									<value>package it.clevercom.echo.rd.model.entity;</value>
+								</replacement>
+								<replacement>
+									<token>@Entity</token>
+									<valueFile>src/main/resources/replaced-code/postgresql/replaceAnnotation.txt</valueFile>
+								</replacement>
+								<replacement>
+									<token>import javax.persistence.Table;</token>
+									<valueFile>src/main/resources/replaced-code/postgresql/replaceImport.txt</valueFile>
+								</replacement>
+							</replacements>
+							<regexFlags>
+								<regexFlag>MULTILINE</regexFlag>
+							</regexFlags>
+						</configuration>
+					</execution>
+					<execution>
+						<id>pg-tmdw-replacer</id>
+						<phase>none</phase>
+						<goals>
+							<goal>replace</goal>
+						</goals>
+						<configuration>
+							<includes>
+								<include>target/pg-resources/tmdw/*.java</include>
+							</includes>
+							<replacements>
+								<replacement>
+									<token>package it.clevercom.echo.hibernate.tm.postgresql.entity;</token>
+									<value>package it.clevercom.echo.tm.model.entity;</value>
 								</replacement>
 								<replacement>
 									<token>@Entity</token>

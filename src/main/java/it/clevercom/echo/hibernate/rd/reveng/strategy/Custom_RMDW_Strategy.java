@@ -26,7 +26,7 @@ public class Custom_RMDW_Strategy extends DelegatingReverseEngineeringStrategy {
 	@Override
 	public String tableToClassName(TableIdentifier tableIdentifier) {
 		String tableName = super.tableToClassName(tableIdentifier);
-		System.out.println("Generating Class => " + tableName.replace("Rd", ""));
+		//System.out.println("Generating Class => " + tableName.replace("Rd", ""));
 		return tableName.replace("Rd", "");
 	}
 }
