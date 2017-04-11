@@ -1,5 +1,18 @@
-Below are listed the commands in order to generate entities with echo-hibernate plugin.
-You can generate entities for any platform module (tm=telemedicine, rd=radiology) by launching one of the two main maven task configured for postgresql (postgresql-generate-rmdw, postgresql-generate-tmdw). Entities are generated in the same project and copied to the right module folder if projects are in the same IDE workspace.
+ _______   ________  ___  ___  ________                 ___  ___  ___  ________  _______   ________  ________   ________  _________  _______      
+|\  ___ \ |\   ____\|\  \|\  \|\   __  \               |\  \|\  \|\  \|\   __  \|\  ___ \ |\   __  \|\   ___  \|\   __  \|\___   ___\\  ___ \     
+\ \   __/|\ \  \___|\ \  \\\  \ \  \|\  \  ____________\ \  \\\  \ \  \ \  \|\ /\ \   __/|\ \  \|\  \ \  \\ \  \ \  \|\  \|___ \  \_\ \   __/|    
+ \ \  \_|/_\ \  \    \ \   __  \ \  \\\  \|\____________\ \   __  \ \  \ \   __  \ \  \_|/_\ \   _  _\ \  \\ \  \ \   __  \   \ \  \ \ \  \_|/__  
+  \ \  \_|\ \ \  \____\ \  \ \  \ \  \\\  \|____________|\ \  \ \  \ \  \ \  \|\  \ \  \_|\ \ \  \\  \\ \  \\ \  \ \  \ \  \   \ \  \ \ \  \_|\ \ 
+   \ \_______\ \_______\ \__\ \__\ \_______\              \ \__\ \__\ \__\ \_______\ \_______\ \__\\ _\\ \__\\ \__\ \__\ \__\   \ \__\ \ \_______\
+    \|_______|\|_______|\|__|\|__|\|_______|               \|__|\|__|\|__|\|_______|\|_______|\|__|\|__|\|__| \|__|\|__|\|__|    \|__|  \|_______|
+    
+#### BASE PROJECT DESCRIPTION ####
+
+
+#### USAGE ####
+Below are listed the commands in order to generate entities with echo-hibernate plugin.<br>
+
+You can generate entities for any platform module (tm=telemedicine, rd=radiology) by launching one of the two main maven task configured for postgresql RDBMS (postgresql-generate-rmdw, postgresql-generate-tmdw). Entities are generated in the same project and copied to the right module folder if projects are in the same IDE workspace.
 
 a) Generate radiology entities for postgresql (rd-api):
 
