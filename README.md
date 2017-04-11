@@ -1,25 +1,16 @@
 #### BASE PROJECT DESCRIPTION ####
 
-With this project you can automatically update platform module entities by launching a simple maven command.
-Entities are generated automatically 
+With this project you can automatically update platform module entities by launching a simple maven command.<br/>
+Entities are generated automatically by using:
+
+a) hibernate configuration file (one per module) placed in the src/main/resources/hibernate-configuration/[target-rdbms-folder]
+b) hibernate reverse engineering strategy (one per module) placed in the src/main/resources/reveng/[target-rdbms-folder]
 
 In order to run this plugin you must have the following requisites:
 - Oracle Java Development Kit 8
 - Apache Maven 3.3.x or later
-- echo platform source code downloadable from <a href="http://dev.neclab.it:8181/a.matteo/echo">here</a>
-- echo-hibernate must be checked out in the same workspace as echo platform 
-
-echo [pom]
-		|
-		|--> echo-api [war]
-		|
-		|--> echo-common [jar]
-		|
-		|--> custom-api-1 [jar]
-		|
-		...
-		|
-		|--> custom-api-n [jar]
+- echo platform source code downloadable from gitlab <a href="http://dev.neclab.it:8181/a.matteo/echo">here</a>
+- echo-hibernate must be checked out and placed in the same IDE workspace as echo platform 
 
 In order to add a new entity to generate you must edit
 
