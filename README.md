@@ -12,17 +12,17 @@ c) Hibernate custom reverse engineering strategy (one per module) placed in the 
 In order to run this plugin you must have the following pre-requisites:<br/>
 - Oracle Java Development Kit 8<br/>
 - Apache Maven 3.3.x or later<br/>
-- Echo platform source code (you can get it <a href="http://dev.neclab.it:8181/a.matteo/echo">here</a><br/>)
+- Echo platform source code (you can get it <a href="http://dev.neclab.it:8181/a.matteo/echo">here</a>)<br/>
 - Echo-hibernate 
 
-Note: this plugin must be checked out and placed in the same IDE workspace as echo platform<br/>
+Note: this plugin must be checked out from gitlab and placed in the same IDE workspace folder as echo platform<br/>
 
 In order to add a new database table in the automatic generation task, you must edit the following file:<br/>
 - src/main/resources/reveng/[target-rdbms-folder]/[module].hibernate.reveng.xml<br/>
 
 And add the new table name like this:<br/>
 
-	<table-filter match-schema="[schema]" match-name="[new_table_name]" />
+	<table-filter match-schema="[db_schema]" match-name="[new_table_name]" />
 
 And add this standard portion of XML related to the sequence generator:<br/>
 
@@ -33,7 +33,7 @@ And add this standard portion of XML related to the sequence generator:<br/>
             	<param name="increment_size">1</param>
             	<param name="sequence_name">[new_sequence_name]</param>
 			</generator>
-			<key-column name="[field_linked_to_the_sequence]"/>
+			<key-column name="[field_name_linked_to_the_sequence]"/>
 		</primary-key>
 	</table>
 
