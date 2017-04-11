@@ -49,9 +49,9 @@ a) Generate radiology entities for postgresql (rd-api):<br/>
 
 	Previous task executes the following subcommands:
 		mvn antrun:run@pg-rmdw-hbm2java
-		mvn resources:copy-resources@copy-temp-pg-resources
-		mvn com.google.code.maven-replacer-plugin:replacer:replace@pg-replacer
-		mvn resources:copy-resources@inject-pg-resources
+		mvn resources:copy-resources@copy-temp-rmdw-pg-resources
+		mvn com.google.code.maven-replacer-plugin:replacer:replace@pg-rmdw-replacer
+		mvn resources:copy-resources@inject-pg-rmdw-resources
 		
 b) Generate telemedicine entities for postgresql (tm-api):<br/>
 
@@ -59,6 +59,6 @@ b) Generate telemedicine entities for postgresql (tm-api):<br/>
 
 	Previous task executes the following subcommands:
 		mvn antrun:run@pg-tmdw-hbm2java
-		mvn resources:copy-resources@copy-temp-pg-resources
-		mvn com.google.code.maven-replacer-plugin:replacer:replace@pg-replacer
-		mvn resources:copy-resources@inject-pg-resources
+		mvn resources:copy-resources@copy-temp-tmdw-pg-resources
+		mvn com.google.code.maven-replacer-plugin:replacer:replace@pg-tmdw-replacer
+		mvn resources:copy-resources@inject-pg-tmdw-resources
