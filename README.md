@@ -1,18 +1,37 @@
 #### BASE PROJECT DESCRIPTION ####
 
-With this project you can automatically update platform module entities by launching a simple maven command.<br/>
-Entities are generated automatically by using:
+With this project you can automatically update platform modules entities by launching a simple maven command.<br/>
+Entities are generated automatically starting from:<br/>
 
-a) hibernate configuration file (one per module) placed in the src/main/resources/hibernate-configuration/[target-rdbms-folder]
-b) hibernate reverse engineering strategy (one per module) placed in the src/main/resources/reveng/[target-rdbms-folder]
+a) hibernate configuration file (one per module) placed in the src/main/resources/hibernate-configuration/[target-rdbms-folder]<br/>
+b) hibernate standard reverse engineering strategy XML (one per module) placed in the src/main/resources/reveng/[target-rdbms-folder]<br/>
+c) hibernate custom reverse engineering strategy (one per module) placed in the src/main/java/it/clevercom/echo/hibernate/[module]/reveng/strategy<br/>
 
-In order to run this plugin you must have the following requisites:
-- Oracle Java Development Kit 8
-- Apache Maven 3.3.x or later
-- echo platform source code downloadable from gitlab <a href="http://dev.neclab.it:8181/a.matteo/echo">here</a>
-- echo-hibernate must be checked out and placed in the same IDE workspace as echo platform 
+In order to run this plugin you must have the following requisites:<br/>
+- Oracle Java Development Kit 8<br/>
+- Apache Maven 3.3.x or later<br/>
+- echo platform source code downloadable from gitlab <a href="http://dev.neclab.it:8181/a.matteo/echo">here</a><br/>
+- echo-hibernate must be checked out and placed in the same IDE workspace as echo platform<br/>
 
-In order to add a new entity to generate you must edit
+In order to add a new database table in the automatic generation task you must edit the following file:<br/>
+- src/main/resources/reveng/[target-rdbms-folder]/[module].hibernate.reveng.xml<br/>
+
+You must only add:<br/>
+
+	<table-filter match-schema="[schema]" match-name="[new_table_name]" /><br/>
+
+and this standard portion of XML:
+
+	<table name="[new_table_name]">
+		<primary-key>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">[new_sequence_name]</param>
+			</generator>
+			<key-column name="[field_linked_to_the_sequence]"/>
+		</primary-key>
+	</table>
 
 #### USAGE ####
 Below are listed the commands in order to generate entities with echo-hibernate plugin.<br>
