@@ -1,9 +1,9 @@
 #### BASE PROJECT DESCRIPTION ####
 
 With this project you can automatically update platform modules entities by launching a simple maven command.<br/>
-Entities are generated and annotated automatically. Generated classes are copied to the right project package. 
+Entities are named, generated and annotated automatically. In addition to that, generated classes are copied in the right project package module. 
 
-Entities are generated automatically starting from:<br/>
+Classes are generated automatically using these configuration items:<br/>
 
 a) Hibernate configuration file (one per module) placed in the src/main/resources/hibernate-configuration/[target-rdbms-folder]<br/>
 b) Hibernate standard reverse engineering strategy XML (one per module) placed in the src/main/resources/reveng/[target-rdbms-folder]<br/>
