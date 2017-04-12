@@ -43,7 +43,7 @@ You can generate entities for any platform module (tm=telemedicine, rd=radiology
 
 Below are listed the commands that you can use from shell in order to generate entities with echo-hibernate plugin.<br/>
 
-a) Generate radiology entities for postgresql (rd-api):<br/>
+a) Radiology entities generation for postgresql (rd-api):<br/>
 
 	mvn exec:exec@postgresql-generate-rmdw
 
@@ -53,7 +53,7 @@ a) Generate radiology entities for postgresql (rd-api):<br/>
 		mvn com.google.code.maven-replacer-plugin:replacer:replace@pg-rmdw-replacer
 		mvn resources:copy-resources@inject-pg-rmdw-resources
 		
-b) Generate telemedicine entities for postgresql (tm-api):<br/>
+b) Telemedicine entities generation for postgresql (tm-api):<br/>
 
 	mvn exec:exec@postgresql-generate-tmdw
 
