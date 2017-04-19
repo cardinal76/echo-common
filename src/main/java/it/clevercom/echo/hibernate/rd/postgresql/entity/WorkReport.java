@@ -1,5 +1,5 @@
 package it.clevercom.echo.hibernate.rd.postgresql.entity;
-// Generated 18-apr-2017 16.29.28 by Hibernate Tools 5.2.2.Final
+// Generated 19-apr-2017 15.19.48 by Hibernate Tools 5.2.2.Final
 
 
 import java.util.Date;
@@ -36,10 +36,6 @@ public class WorkReport  implements java.io.Serializable {
      private Date creationdate;
      private Date completiondate;
      private String body;
-     private Date created;
-     private Date updated;
-     private String userupdate;
-     private Boolean active;
      private Set<WorkReportLog> workReportLogs = new HashSet<WorkReportLog>(0);
      private Set<WorkReportUser> workReportUsers = new HashSet<WorkReportUser>(0);
 
@@ -47,18 +43,14 @@ public class WorkReport  implements java.io.Serializable {
     }
 
 	
-    public WorkReport(WorkSession workSession, WorkStatus workStatus, WorkTask workTask, Date creationdate, String body, Date created, Date updated, String userupdate, Boolean active) {
+    public WorkReport(WorkSession workSession, WorkStatus workStatus, WorkTask workTask, Date creationdate, String body) {
         this.workSession = workSession;
         this.workStatus = workStatus;
         this.workTask = workTask;
         this.creationdate = creationdate;
         this.body = body;
-        this.created = created;
-        this.updated = updated;
-        this.userupdate = userupdate;
-        this.active = active;
     }
-    public WorkReport(WorkSession workSession, WorkStatus workStatus, WorkTask workTask, Long accessionnumber, Date creationdate, Date completiondate, String body, Date created, Date updated, String userupdate, Boolean active, Set<WorkReportLog> workReportLogs, Set<WorkReportUser> workReportUsers) {
+    public WorkReport(WorkSession workSession, WorkStatus workStatus, WorkTask workTask, Long accessionnumber, Date creationdate, Date completiondate, String body, Set<WorkReportLog> workReportLogs, Set<WorkReportUser> workReportUsers) {
        this.workSession = workSession;
        this.workStatus = workStatus;
        this.workTask = workTask;
@@ -66,10 +58,6 @@ public class WorkReport  implements java.io.Serializable {
        this.creationdate = creationdate;
        this.completiondate = completiondate;
        this.body = body;
-       this.created = created;
-       this.updated = updated;
-       this.userupdate = userupdate;
-       this.active = active;
        this.workReportLogs = workReportLogs;
        this.workReportUsers = workReportUsers;
     }
@@ -154,46 +142,6 @@ public class WorkReport  implements java.io.Serializable {
     
     public void setBody(String body) {
         this.body = body;
-    }
-
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name="created", nullable=false, length=29)
-    public Date getCreated() {
-        return this.created;
-    }
-    
-    public void setCreated(Date created) {
-        this.created = created;
-    }
-
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name="updated", nullable=false, length=29)
-    public Date getUpdated() {
-        return this.updated;
-    }
-    
-    public void setUpdated(Date updated) {
-        this.updated = updated;
-    }
-
-    
-    @Column(name="userupdate", nullable=false, length=100)
-    public String getUserupdate() {
-        return this.userupdate;
-    }
-    
-    public void setUserupdate(String userupdate) {
-        this.userupdate = userupdate;
-    }
-
-    
-    @Column(name="active", nullable=false)
-    public Boolean getActive() {
-        return this.active;
-    }
-    
-    public void setActive(Boolean active) {
-        this.active = active;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="workReport")

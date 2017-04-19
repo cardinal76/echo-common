@@ -334,6 +334,10 @@
 									<token>import javax.persistence.Table;</token>
 									<valueFile>src/main/resources/replaced-code/postgresql/replaceImport.txt</valueFile>
 								</replacement>
+								<replacement>
+									<token>implements java.io.Serializable</token>
+									<value>extends AbstractJpaEchoEntity implements java.io.Serializable</value>
+								</replacement>
 							</replacements>
 							<regexFlags>
 								<regexFlag>MULTILINE</regexFlag>
@@ -362,6 +366,10 @@
 								<replacement>
 									<token>import javax.persistence.Table;</token>
 									<valueFile>src/main/resources/replaced-code/postgresql/replaceImport.txt</valueFile>
+								</replacement>
+								<replacement>
+									<token>implements java.io.Serializable</token>
+									<value>extends AbstractJpaEchoEntity implements java.io.Serializable</value>
 								</replacement>
 							</replacements>
 							<regexFlags>

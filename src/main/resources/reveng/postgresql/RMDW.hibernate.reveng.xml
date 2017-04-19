@@ -56,6 +56,10 @@
 			</generator>
 			<key-column name="idsetting"/>
 		</primary-key>
+		<column name="active" exclude="true"/>
+		<column name="userupdate" exclude="true"/>
+		<column name="created" exclude="true"/>
+		<column name="updated" exclude="true"/>
 	</table>
 	
 	<table name="rd_body_apparatus">
@@ -67,6 +71,10 @@
 			</generator>
 			<key-column name="idbodyapparatus"/>
 		</primary-key>
+		<column name="active" exclude="true"/>
+		<column name="userupdate" exclude="true"/>
+		<column name="created" exclude="true"/>
+		<column name="updated" exclude="true"/>
 	</table>
 	
 	<table name="rd_burn_robot">
@@ -78,6 +86,10 @@
 			</generator>
 			<key-column name="idburnrobot"/>
 		</primary-key>
+		<column name="active" exclude="true"/>
+		<column name="userupdate" exclude="true"/>
+		<column name="created" exclude="true"/>
+		<column name="updated" exclude="true"/>
 	</table>
 	
 	<table name="rd_citizenship">
@@ -89,6 +101,10 @@
 			</generator>
 			<key-column name="idcitizenship"/>
 		</primary-key>
+		<column name="active" exclude="true"/>
+		<column name="userupdate" exclude="true"/>
+		<column name="created" exclude="true"/>
+		<column name="updated" exclude="true"/>
 	</table>
 	
 	<table name="rd_coding_actor">
@@ -100,6 +116,10 @@
 			</generator>
 			<key-column name="idcodingactor"/>
 		</primary-key>
+		<column name="active" exclude="true"/>
+		<column name="userupdate" exclude="true"/>
+		<column name="created" exclude="true"/>
+		<column name="updated" exclude="true"/>
 	</table>
 	
 	<table name="rd_country">
@@ -111,6 +131,10 @@
 			</generator>
 			<key-column name="idcountry"/>
 		</primary-key>
+		<column name="active" exclude="true"/>
+		<column name="userupdate" exclude="true"/>
+		<column name="created" exclude="true"/>
+		<column name="updated" exclude="true"/>
 	</table>
 	
 	<table name="rd_hl7_inbound_message">
@@ -122,12 +146,20 @@
 			</generator>
 			<key-column name="idinboundmessage"/>
 		</primary-key>
+		<column name="active" exclude="true"/>
+		<column name="userupdate" exclude="true"/>
+		<column name="created" exclude="true"/>
+		<column name="updated" exclude="true"/>
 	</table>
 	
 	<table name="rd_hl7_order">
 		<primary-key>
 			<key-column name="idhl7order"/>
 		</primary-key>
+		<column name="active" exclude="true"/>
+		<column name="userupdate" exclude="true"/>
+		<column name="created" exclude="true"/>
+		<column name="updated" exclude="true"/>
 	</table>
 	
 	<table name="rd_hl7_outbound_message">
@@ -139,6 +171,10 @@
 			</generator>
 			<key-column name="idoutboundmessage"/>
 		</primary-key>
+		<column name="active" exclude="true"/>
+		<column name="userupdate" exclude="true"/>
+		<column name="created" exclude="true"/>
+		<column name="updated" exclude="true"/>
 	</table>
 	
 	<table name="rd_hl7_patient">
@@ -146,6 +182,10 @@
 			<key-column name="idhl7patient"/>
 			<key-column name="idauthoritynamespaceid"/>
 		</primary-key>
+		<column name="active" exclude="true"/>
+		<column name="userupdate" exclude="true"/>
+		<column name="created" exclude="true"/>
+		<column name="updated" exclude="true"/>
 	</table>
 	
 	<table name="rd_icd9_patology">
@@ -157,6 +197,10 @@
 			</generator>
 			<key-column name="idicd9patology"/>
 		</primary-key>
+		<column name="active" exclude="true"/>
+		<column name="userupdate" exclude="true"/>
+		<column name="created" exclude="true"/>
+		<column name="updated" exclude="true"/>
 	</table>
 	
 	<table name="rd_icd9_patology_group">
@@ -168,6 +212,10 @@
 			</generator>
 			<key-column name="idicd9patologygroup"/>
 		</primary-key>
+		<column name="active" exclude="true"/>
+		<column name="userupdate" exclude="true"/>
+		<column name="created" exclude="true"/>
+		<column name="updated" exclude="true"/>
 	</table>
 	
 	<table name="rd_maritalstatus">
@@ -179,6 +227,10 @@
 			</generator>
 			<key-column name="idmaritalstatus"/>
 		</primary-key>
+		<column name="active" exclude="true"/>
+		<column name="userupdate" exclude="true"/>
+		<column name="created" exclude="true"/>
+		<column name="updated" exclude="true"/>
 	</table>
 	
 	<table name="rd_modality">
@@ -190,6 +242,10 @@
 			</generator>
 			<key-column name="idmodality"/>
 		</primary-key>
+		<column name="active" exclude="true"/>
+		<column name="userupdate" exclude="true"/>
+		<column name="created" exclude="true"/>
+		<column name="updated" exclude="true"/>
 	</table>
 	
 	<table name="rd_modality_daily_allocation">
@@ -201,6 +257,10 @@
 			</generator>
 			<key-column name="idmodalitydailyallocation"/>
 		</primary-key>
+		<column name="active" exclude="true"/>
+		<column name="userupdate" exclude="true"/>
+		<column name="created" exclude="true"/>
+		<column name="updated" exclude="true"/>
 	</table>
 	
 	<table name="rd_modality_service">
@@ -212,6 +272,10 @@
 			</generator>
 			<key-column name="idmodalityservice"/>
 		</primary-key>
+		<column name="active" exclude="true"/>
+		<column name="userupdate" exclude="true"/>
+		<column name="created" exclude="true"/>
+		<column name="updated" exclude="true"/>
 	</table>
 	
 	<table name="rd_modality_type">
@@ -223,6 +287,10 @@
 			</generator>
 			<key-column name="idmodalitytype"/>
 		</primary-key>
+		<column name="active" exclude="true"/>
+		<column name="userupdate" exclude="true"/>
+		<column name="created" exclude="true"/>
+		<column name="updated" exclude="true"/>
 	</table>
 	
 	<table name="rd_municipality">
@@ -234,6 +302,10 @@
 			</generator>
 			<key-column name="idmunicipality"/>
 		</primary-key>
+		<column name="active" exclude="true"/>
+		<column name="userupdate" exclude="true"/>
+		<column name="created" exclude="true"/>
+		<column name="updated" exclude="true"/>
 	</table>
 	
 	<table name="rd_order">
@@ -245,6 +317,10 @@
 			</generator>
 			<key-column name="idorder"/>
 		</primary-key>
+		<column name="active" exclude="true"/>
+		<column name="userupdate" exclude="true"/>
+		<column name="created" exclude="true"/>
+		<column name="updated" exclude="true"/>
 	</table>
 	
 	<table name="rd_order_log">
@@ -256,6 +332,10 @@
 			</generator>
 			<key-column name="idorderlog"/>
 		</primary-key>
+		<column name="active" exclude="true"/>
+		<column name="userupdate" exclude="true"/>
+		<column name="created" exclude="true"/>
+		<column name="updated" exclude="true"/>
 	</table>
 
 	<table name="rd_order_service">
@@ -267,6 +347,10 @@
 			</generator>
 			<key-column name="idorderservice"/>
 		</primary-key>
+		<column name="active" exclude="true"/>
+		<column name="userupdate" exclude="true"/>
+		<column name="created" exclude="true"/>
+		<column name="updated" exclude="true"/>
 	</table>
 
  	<table name="rd_organization_unit">
@@ -278,6 +362,10 @@
 			</generator>
 			<key-column name="idorganizationunit"/>
 		</primary-key>
+		<column name="active" exclude="true"/>
+		<column name="userupdate" exclude="true"/>
+		<column name="created" exclude="true"/>
+		<column name="updated" exclude="true"/>
 	</table>
 	
 	<table name="rd_patient">
@@ -289,6 +377,10 @@
 			</generator>
 			<key-column name="idpatient"/>
 		</primary-key>
+		<column name="active" exclude="true"/>
+		<column name="userupdate" exclude="true"/>
+		<column name="created" exclude="true"/>
+		<column name="updated" exclude="true"/>
 	</table>
 	
 	<table name="rd_patient_coding_actor">
@@ -300,6 +392,10 @@
 			</generator>
 			<key-column name="idpatientcodingactor"/>
 		</primary-key>
+		<column name="active" exclude="true"/>
+		<column name="userupdate" exclude="true"/>
+		<column name="created" exclude="true"/>
+		<column name="updated" exclude="true"/>
 	</table>
 	
 	<table name="rd_phrase_book">
@@ -311,6 +407,10 @@
 			</generator>
 			<key-column name="idphrasebook"/>
 		</primary-key>
+		<column name="active" exclude="true"/>
+		<column name="userupdate" exclude="true"/>
+		<column name="created" exclude="true"/>
+		<column name="updated" exclude="true"/>
 	</table>
 	
 	<table name="rd_province">
@@ -322,6 +422,10 @@
 			</generator>
 			<key-column name="idprovince"/>
 		</primary-key>
+		<column name="active" exclude="true"/>
+		<column name="userupdate" exclude="true"/>
+		<column name="created" exclude="true"/>
+		<column name="updated" exclude="true"/>
 	</table>
 	
 	<table name="rd_region">
@@ -333,6 +437,10 @@
             </generator>	
             <key-column name="idregion"/>
 		</primary-key>
+		<column name="active" exclude="true"/>
+		<column name="userupdate" exclude="true"/>
+		<column name="created" exclude="true"/>
+		<column name="updated" exclude="true"/>
 	</table>
 	
 	<table name="rd_service">
@@ -344,6 +452,10 @@
             </generator>
 			<key-column name="idservice"/>
 		</primary-key>
+		<column name="active" exclude="true"/>
+		<column name="userupdate" exclude="true"/>
+		<column name="created" exclude="true"/>
+		<column name="updated" exclude="true"/>
 	</table>
 	
 	<table name="rd_service_coding_actor">
@@ -355,6 +467,10 @@
             </generator>
 			<key-column name="idservicecodingactor"/>
 		</primary-key>
+		<column name="active" exclude="true"/>
+		<column name="userupdate" exclude="true"/>
+		<column name="created" exclude="true"/>
+		<column name="updated" exclude="true"/>
 	</table>
 	
 	<table name="rd_work_priority">
@@ -366,6 +482,10 @@
             </generator>
 			<key-column name="idworkpriority"/>
 		</primary-key>
+		<column name="active" exclude="true"/>
+		<column name="userupdate" exclude="true"/>
+		<column name="created" exclude="true"/>
+		<column name="updated" exclude="true"/>
 	</table>
 	
 	<table name="rd_work_report">
@@ -377,6 +497,10 @@
             </generator>
 			<key-column name="idworkreport"/>
 		</primary-key>
+		<column name="active" exclude="true"/>
+		<column name="userupdate" exclude="true"/>
+		<column name="created" exclude="true"/>
+		<column name="updated" exclude="true"/>
 	</table>
 	
 	<table name="rd_work_report_log">
@@ -388,6 +512,10 @@
             </generator>
             <key-column name="idworkreportlog"/>
 		</primary-key>
+		<column name="active" exclude="true"/>
+		<column name="userupdate" exclude="true"/>
+		<column name="created" exclude="true"/>
+		<column name="updated" exclude="true"/>
 	</table>
 	
 	<table name="rd_work_report_user">
@@ -399,6 +527,10 @@
             </generator>
             <key-column name="idworkreportuser"/>
 		</primary-key>
+		<column name="active" exclude="true"/>
+		<column name="userupdate" exclude="true"/>
+		<column name="created" exclude="true"/>
+		<column name="updated" exclude="true"/>
 	</table>
 	
 	<table name="rd_work_session">
@@ -410,6 +542,10 @@
             </generator>
 			<key-column name="idworksession"/>
 		</primary-key>
+		<column name="active" exclude="true"/>
+		<column name="userupdate" exclude="true"/>
+		<column name="created" exclude="true"/>
+		<column name="updated" exclude="true"/>
 	</table>
 	
 	<table name="rd_work_status">
@@ -421,6 +557,10 @@
             </generator>
 			<key-column name="idworkstatus"/>
 		</primary-key>
+		<column name="active" exclude="true"/>
+		<column name="userupdate" exclude="true"/>
+		<column name="created" exclude="true"/>
+		<column name="updated" exclude="true"/>
 	</table>
 	
 	<table name="rd_work_task">
@@ -432,6 +572,10 @@
             </generator>
 			<key-column name="idworktask"/>
 		</primary-key>
+		<column name="active" exclude="true"/>
+		<column name="userupdate" exclude="true"/>
+		<column name="created" exclude="true"/>
+		<column name="updated" exclude="true"/>
 	</table>
 	
 	<table name="rd_work_task_log">
@@ -443,6 +587,10 @@
             </generator>
 			<key-column name="idworktasklog"/>
 		</primary-key>
+		<column name="active" exclude="true"/>
+		<column name="userupdate" exclude="true"/>
+		<column name="created" exclude="true"/>
+		<column name="updated" exclude="true"/>
 	</table>
 	
 </hibernate-reverse-engineering>

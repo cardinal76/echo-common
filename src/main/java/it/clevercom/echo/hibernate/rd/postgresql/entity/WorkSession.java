@@ -1,8 +1,7 @@
 package it.clevercom.echo.hibernate.rd.postgresql.entity;
-// Generated 18-apr-2017 16.29.28 by Hibernate Tools 5.2.2.Final
+// Generated 19-apr-2017 15.19.48 by Hibernate Tools 5.2.2.Final
 
 
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
@@ -14,8 +13,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
 
@@ -31,10 +28,6 @@ public class WorkSession  implements java.io.Serializable {
      private Long idworksession;
      private Patient patient;
      private WorkStatus workStatus;
-     private Date created;
-     private Date updated;
-     private String userupdate;
-     private Boolean active;
      private Set<WorkReport> workReports = new HashSet<WorkReport>(0);
      private Set<WorkTask> workTasks = new HashSet<WorkTask>(0);
      private Set<Order> orders = new HashSet<Order>(0);
@@ -43,21 +36,13 @@ public class WorkSession  implements java.io.Serializable {
     }
 
 	
-    public WorkSession(Patient patient, WorkStatus workStatus, Date created, Date updated, String userupdate, Boolean active) {
+    public WorkSession(Patient patient, WorkStatus workStatus) {
         this.patient = patient;
         this.workStatus = workStatus;
-        this.created = created;
-        this.updated = updated;
-        this.userupdate = userupdate;
-        this.active = active;
     }
-    public WorkSession(Patient patient, WorkStatus workStatus, Date created, Date updated, String userupdate, Boolean active, Set<WorkReport> workReports, Set<WorkTask> workTasks, Set<Order> orders) {
+    public WorkSession(Patient patient, WorkStatus workStatus, Set<WorkReport> workReports, Set<WorkTask> workTasks, Set<Order> orders) {
        this.patient = patient;
        this.workStatus = workStatus;
-       this.created = created;
-       this.updated = updated;
-       this.userupdate = userupdate;
-       this.active = active;
        this.workReports = workReports;
        this.workTasks = workTasks;
        this.orders = orders;
@@ -93,46 +78,6 @@ public class WorkSession  implements java.io.Serializable {
     
     public void setWorkStatus(WorkStatus workStatus) {
         this.workStatus = workStatus;
-    }
-
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name="created", nullable=false, length=29)
-    public Date getCreated() {
-        return this.created;
-    }
-    
-    public void setCreated(Date created) {
-        this.created = created;
-    }
-
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name="updated", nullable=false, length=29)
-    public Date getUpdated() {
-        return this.updated;
-    }
-    
-    public void setUpdated(Date updated) {
-        this.updated = updated;
-    }
-
-    
-    @Column(name="userupdate", nullable=false, length=100)
-    public String getUserupdate() {
-        return this.userupdate;
-    }
-    
-    public void setUserupdate(String userupdate) {
-        this.userupdate = userupdate;
-    }
-
-    
-    @Column(name="active", nullable=false)
-    public Boolean getActive() {
-        return this.active;
-    }
-    
-    public void setActive(Boolean active) {
-        this.active = active;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="workSession")

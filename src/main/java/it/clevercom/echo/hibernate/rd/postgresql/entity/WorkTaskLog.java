@@ -1,5 +1,5 @@
 package it.clevercom.echo.hibernate.rd.postgresql.entity;
-// Generated 18-apr-2017 16.29.28 by Hibernate Tools 5.2.2.Final
+// Generated 19-apr-2017 15.19.48 by Hibernate Tools 5.2.2.Final
 
 
 import java.util.Date;
@@ -38,16 +38,12 @@ public class WorkTaskLog  implements java.io.Serializable {
      private String studyuuid;
      private Long studyid;
      private Long iduser;
-     private Date created;
-     private Date updated;
-     private String userupdate;
-     private Boolean active;
 
     public WorkTaskLog() {
     }
 
 	
-    public WorkTaskLog(WorkTask workTask, Long idworksession, Long accessionnumber, String statuscode, String prioritycode, Long idservice, Long idmodality, Date scheduleddate, String studyuuid, Long iduser, Date created, Date updated, String userupdate, Boolean active) {
+    public WorkTaskLog(WorkTask workTask, Long idworksession, Long accessionnumber, String statuscode, String prioritycode, Long idservice, Long idmodality, Date scheduleddate, String studyuuid, Long iduser) {
         this.workTask = workTask;
         this.idworksession = idworksession;
         this.accessionnumber = accessionnumber;
@@ -58,12 +54,8 @@ public class WorkTaskLog  implements java.io.Serializable {
         this.scheduleddate = scheduleddate;
         this.studyuuid = studyuuid;
         this.iduser = iduser;
-        this.created = created;
-        this.updated = updated;
-        this.userupdate = userupdate;
-        this.active = active;
     }
-    public WorkTaskLog(WorkTask workTask, Long idworksession, Long accessionnumber, String statuscode, String prioritycode, Long idservice, Long idmodality, Date scheduleddate, Date executiondate, String studyuuid, Long studyid, Long iduser, Date created, Date updated, String userupdate, Boolean active) {
+    public WorkTaskLog(WorkTask workTask, Long idworksession, Long accessionnumber, String statuscode, String prioritycode, Long idservice, Long idmodality, Date scheduleddate, Date executiondate, String studyuuid, Long studyid, Long iduser) {
        this.workTask = workTask;
        this.idworksession = idworksession;
        this.accessionnumber = accessionnumber;
@@ -76,10 +68,6 @@ public class WorkTaskLog  implements java.io.Serializable {
        this.studyuuid = studyuuid;
        this.studyid = studyid;
        this.iduser = iduser;
-       this.created = created;
-       this.updated = updated;
-       this.userupdate = userupdate;
-       this.active = active;
     }
    
      @GenericGenerator(name="generator", strategy="org.hibernate.id.enhanced.SequenceStyleGenerator", parameters={@Parameter(name="optimizer", value="none"), @Parameter(name="sequence_name", value="worktasklog_idworktasklog_seq"), @Parameter(name="increment_size", value="1")})@Id @GeneratedValue(generator="generator")
@@ -212,46 +200,6 @@ public class WorkTaskLog  implements java.io.Serializable {
     
     public void setIduser(Long iduser) {
         this.iduser = iduser;
-    }
-
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name="created", nullable=false, length=29)
-    public Date getCreated() {
-        return this.created;
-    }
-    
-    public void setCreated(Date created) {
-        this.created = created;
-    }
-
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name="updated", nullable=false, length=29)
-    public Date getUpdated() {
-        return this.updated;
-    }
-    
-    public void setUpdated(Date updated) {
-        this.updated = updated;
-    }
-
-    
-    @Column(name="userupdate", nullable=false, length=100)
-    public String getUserupdate() {
-        return this.userupdate;
-    }
-    
-    public void setUserupdate(String userupdate) {
-        this.userupdate = userupdate;
-    }
-
-    
-    @Column(name="active", nullable=false)
-    public Boolean getActive() {
-        return this.active;
-    }
-    
-    public void setActive(Boolean active) {
-        this.active = active;
     }
 
 

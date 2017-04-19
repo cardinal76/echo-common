@@ -1,8 +1,7 @@
 package it.clevercom.echo.hibernate.rd.postgresql.entity;
-// Generated 18-apr-2017 16.29.28 by Hibernate Tools 5.2.2.Final
+// Generated 19-apr-2017 15.19.48 by Hibernate Tools 5.2.2.Final
 
 
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
@@ -14,8 +13,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
 
@@ -32,10 +29,6 @@ public class Service  implements java.io.Serializable {
      private BodyApparatus bodyApparatus;
      private ModalityType modalityType;
      private String description;
-     private Date created;
-     private Date updated;
-     private String userupdate;
-     private Boolean active;
      private Long prepcode;
      private Long duration;
      private Boolean schedulable;
@@ -47,21 +40,10 @@ public class Service  implements java.io.Serializable {
     public Service() {
     }
 
-	
-    public Service(Date created, Date updated, String userupdate, Boolean active) {
-        this.created = created;
-        this.updated = updated;
-        this.userupdate = userupdate;
-        this.active = active;
-    }
-    public Service(BodyApparatus bodyApparatus, ModalityType modalityType, String description, Date created, Date updated, String userupdate, Boolean active, Long prepcode, Long duration, Boolean schedulable, Set<ServiceCodingActor> serviceCodingActors, Set<WorkTask> workTasks, Set<ModalityService> modalityServices, Set<OrderService> orderServices) {
+    public Service(BodyApparatus bodyApparatus, ModalityType modalityType, String description, Long prepcode, Long duration, Boolean schedulable, Set<ServiceCodingActor> serviceCodingActors, Set<WorkTask> workTasks, Set<ModalityService> modalityServices, Set<OrderService> orderServices) {
        this.bodyApparatus = bodyApparatus;
        this.modalityType = modalityType;
        this.description = description;
-       this.created = created;
-       this.updated = updated;
-       this.userupdate = userupdate;
-       this.active = active;
        this.prepcode = prepcode;
        this.duration = duration;
        this.schedulable = schedulable;
@@ -111,46 +93,6 @@ public class Service  implements java.io.Serializable {
     
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name="created", nullable=false, length=29)
-    public Date getCreated() {
-        return this.created;
-    }
-    
-    public void setCreated(Date created) {
-        this.created = created;
-    }
-
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name="updated", nullable=false, length=29)
-    public Date getUpdated() {
-        return this.updated;
-    }
-    
-    public void setUpdated(Date updated) {
-        this.updated = updated;
-    }
-
-    
-    @Column(name="userupdate", nullable=false, length=100)
-    public String getUserupdate() {
-        return this.userupdate;
-    }
-    
-    public void setUserupdate(String userupdate) {
-        this.userupdate = userupdate;
-    }
-
-    
-    @Column(name="active", nullable=false)
-    public Boolean getActive() {
-        return this.active;
-    }
-    
-    public void setActive(Boolean active) {
-        this.active = active;
     }
 
     
