@@ -179,8 +179,12 @@
 	
 	<table name="rd_hl7_patient">
 		<primary-key>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">hl7patient_id_seq</param>
+			</generator>
 			<key-column name="idhl7patient"/>
-			<key-column name="idauthoritynamespaceid"/>
 		</primary-key>
 		<column name="active" exclude="true"/>
 		<column name="userupdate" exclude="true"/>

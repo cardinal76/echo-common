@@ -379,6 +379,51 @@
 					</execution>
 				</executions>
 			</plugin>
+			
+			<plugin>
+			    <artifactId>maven-clean-plugin</artifactId>
+			    <version>3.0.0</version>
+			    <configuration>
+			      <filesets>
+			        <fileset>
+			          <directory>src/main/java/it/clevercom/echo/hibernate/rd/postgresql/entity</directory>
+			          	<includes>
+            				<include>**/*.java</include>
+            			</includes>
+            		    <excludes>
+            				<exclude>**/package-info.java</exclude>
+          				</excludes>
+			        </fileset>
+			        <fileset>
+			          <directory>src/main/java/it/clevercom/echo/hibernate/rd/oracle/entity</directory>
+			          	<includes>
+            				<include>**/*.java</include>
+            			</includes>
+            		    <excludes>
+            				<exclude>**/package-info.java</exclude>
+          				</excludes>
+			        </fileset>
+			        <fileset>
+			          <directory>src/main/java/it/clevercom/echo/hibernate/tm/postgresql/entity</directory>
+			          	<includes>
+            				<include>**/*.java</include>
+            			</includes>
+            		    <excludes>
+            				<exclude>**/package-info.java</exclude>
+          				</excludes>
+			        </fileset>
+			        <fileset>
+			          <directory>src/main/java/it/clevercom/echo/hibernate/tm/oracle/entity</directory>
+			          	<includes>
+            				<include>**/*.java</include>
+            			</includes>
+            		    <excludes>
+            				<exclude>**/package-info.java</exclude>
+          				</excludes>
+			        </fileset>
+			      </filesets>
+			    </configuration>
+  			</plugin>
 		</plugins>
 	</build>
 </project>
