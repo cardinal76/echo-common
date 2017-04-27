@@ -1,5 +1,5 @@
 package it.clevercom.echo.hibernate.rd.postgresql.entity;
-// Generated 27-apr-2017 10.34.01 by Hibernate Tools 5.2.2.Final
+// Generated 27-apr-2017 11.40.51 by Hibernate Tools 5.2.2.Final
 
 
 import java.util.HashSet;
@@ -26,6 +26,7 @@ public class Modality  implements java.io.Serializable {
 
 
      private Long idmodality;
+     private ModalityType modalityType;
      private OrganizationUnit organizationUnit;
      private String name;
      private String description;
@@ -39,11 +40,13 @@ public class Modality  implements java.io.Serializable {
     }
 
 	
-    public Modality(OrganizationUnit organizationUnit, String name) {
+    public Modality(ModalityType modalityType, OrganizationUnit organizationUnit, String name) {
+        this.modalityType = modalityType;
         this.organizationUnit = organizationUnit;
         this.name = name;
     }
-    public Modality(OrganizationUnit organizationUnit, String name, String description, Integer dailyservicecapacity, Integer dailypatientcapacity, Set<ModalityService> modalityServices, Set<ModalityDailyAllocation> modalityDailyAllocations, Set<WorkTask> workTasks) {
+    public Modality(ModalityType modalityType, OrganizationUnit organizationUnit, String name, String description, Integer dailyservicecapacity, Integer dailypatientcapacity, Set<ModalityService> modalityServices, Set<ModalityDailyAllocation> modalityDailyAllocations, Set<WorkTask> workTasks) {
+       this.modalityType = modalityType;
        this.organizationUnit = organizationUnit;
        this.name = name;
        this.description = description;
@@ -64,6 +67,16 @@ public class Modality  implements java.io.Serializable {
     
     public void setIdmodality(Long idmodality) {
         this.idmodality = idmodality;
+    }
+
+@ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="idmodalitytype", nullable=false)
+    public ModalityType getModalityType() {
+        return this.modalityType;
+    }
+    
+    public void setModalityType(ModalityType modalityType) {
+        this.modalityType = modalityType;
     }
 
 @ManyToOne(fetch=FetchType.LAZY)

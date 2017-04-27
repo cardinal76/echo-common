@@ -1,5 +1,5 @@
 package it.clevercom.echo.hibernate.rd.postgresql.entity;
-// Generated 27-apr-2017 10.34.01 by Hibernate Tools 5.2.2.Final
+// Generated 27-apr-2017 11.40.51 by Hibernate Tools 5.2.2.Final
 
 
 import java.util.Date;
@@ -54,7 +54,7 @@ public class WorkTask  implements java.io.Serializable {
     }
 
 	
-    public WorkTask(Modality modality, Service service, User user, WorkPriority workPriority, WorkSession workSession, WorkStatus workStatus, Long accessionnumber, Date scheduleddate, String studyuuid) {
+    public WorkTask(Modality modality, Service service, User user, WorkPriority workPriority, WorkSession workSession, WorkStatus workStatus, Long accessionnumber, Date scheduleddate) {
         this.modality = modality;
         this.service = service;
         this.user = user;
@@ -63,7 +63,6 @@ public class WorkTask  implements java.io.Serializable {
         this.workStatus = workStatus;
         this.accessionnumber = accessionnumber;
         this.scheduleddate = scheduleddate;
-        this.studyuuid = studyuuid;
     }
     public WorkTask(Modality modality, Service service, User user, WorkPriority workPriority, WorkSession workSession, WorkStatus workStatus, Long accessionnumber, Date scheduleddate, Date executeddate, String studyuuid, String studyid, Date executingdate, Date reportingdate, Date reporteddate, String executingnote, String executednote, String reportednote, String reportingnote, Set<WorkReport> workReports, Set<WorkTaskLog> workTaskLogs) {
        this.modality = modality;
@@ -191,7 +190,7 @@ public class WorkTask  implements java.io.Serializable {
     }
 
     
-    @Column(name="studyuuid", nullable=false, length=100)
+    @Column(name="studyuuid", length=100)
     public String getStudyuuid() {
         return this.studyuuid;
     }

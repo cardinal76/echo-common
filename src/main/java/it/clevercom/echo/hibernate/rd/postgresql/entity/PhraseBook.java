@@ -1,5 +1,5 @@
 package it.clevercom.echo.hibernate.rd.postgresql.entity;
-// Generated 27-apr-2017 10.34.01 by Hibernate Tools 5.2.2.Final
+// Generated 27-apr-2017 11.40.51 by Hibernate Tools 5.2.2.Final
 
 
 import javax.persistence.Column;
