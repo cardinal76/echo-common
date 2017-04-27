@@ -1,5 +1,5 @@
 package it.clevercom.echo.hibernate.rd.postgresql.entity;
-// Generated 19-apr-2017 22.11.14 by Hibernate Tools 5.2.2.Final
+// Generated 27-apr-2017 10.34.01 by Hibernate Tools 5.2.2.Final
 
 
 import java.util.Date;

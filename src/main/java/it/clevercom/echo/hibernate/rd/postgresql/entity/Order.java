@@ -1,5 +1,5 @@
 package it.clevercom.echo.hibernate.rd.postgresql.entity;
-// Generated 19-apr-2017 22.11.14 by Hibernate Tools 5.2.2.Final
+// Generated 27-apr-2017 10.34.01 by Hibernate Tools 5.2.2.Final
 
 
 import java.util.Date;
@@ -16,6 +16,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.UniqueConstraint;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
 
@@ -24,6 +25,7 @@ import org.hibernate.annotations.Parameter;
  */
 @Entity
 @Table(name="rd_order"
+    , uniqueConstraints = @UniqueConstraint(columnNames="idworksession") 
 )
 public class Order  implements java.io.Serializable {
 
@@ -153,7 +155,7 @@ public class Order  implements java.io.Serializable {
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="idworksession")
+    @JoinColumn(name="idworksession", unique=true)
     public WorkSession getWorkSession() {
         return this.workSession;
     }
