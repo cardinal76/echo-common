@@ -8,53 +8,54 @@
 		<sql-type jdbc-type="BIT" hibernate-type="java.lang.Boolean"></sql-type>
 	</type-mapping>
 	
-	<table-filter match-schema="tmdw" match-name="tm_care_giver" />
-	<table-filter match-schema="tmdw" match-name="tm_clinic_folder" />
-	<table-filter match-schema="tmdw" match-name="tm_clinic_report" />
-	<table-filter match-schema="tmdw" match-name="tm_country" />
-	<table-filter match-schema="tmdw" match-name="tm_custom_threshold" />
-	<table-filter match-schema="tmdw" match-name="tm_detection_plan" />
-	<table-filter match-schema="tmdw" match-name="tm_detection_result" />
-	<table-filter match-schema="tmdw" match-name="tm_detection_task" />
-	<table-filter match-schema="tmdw" match-name="tm_detection_type" />
-	<table-filter match-schema="tmdw" match-name="tm_detectiontype_measurementtype" />
-	<table-filter match-schema="tmdw" match-name="tm_health_device" />
-	<table-filter match-schema="tmdw" match-name="tm_health_devicetype" />
-	<table-filter match-schema="tmdw" match-name="tm_health_kit" />
-	<table-filter match-schema="tmdw" match-name="tm_healthkit_patient" />
-	<table-filter match-schema="tmdw" match-name="tm_language_type" />
-	<table-filter match-schema="tmdw" match-name="tm_measurement_type" />
-	<table-filter match-schema="tmdw" match-name="tm_measurement_unit" />
-	<table-filter match-schema="tmdw" match-name="tm_meeting_request" />
-	<table-filter match-schema="tmdw" match-name="tm_message" />
-	<table-filter match-schema="tmdw" match-name="tm_municipality" />
-	<table-filter match-schema="tmdw" match-name="tm_notification" />
-	<table-filter match-schema="tmdw" match-name="tm_notification_type" />
-	<table-filter match-schema="tmdw" match-name="tm_nurse" />
-	<table-filter match-schema="tmdw" match-name="tm_nurse_organizationunit" />
-	<table-filter match-schema="tmdw" match-name="tm_nurse_patient" />
-	<table-filter match-schema="tmdw" match-name="tm_organization_unit" />
-	<table-filter match-schema="tmdw" match-name="tm_patient" />
-	<table-filter match-schema="tmdw" match-name="tm_patient_caregiver" />
-	<table-filter match-schema="tmdw" match-name="tm_physician" />
-	<table-filter match-schema="tmdw" match-name="tm_physician_organizationunit" />
-	<table-filter match-schema="tmdw" match-name="tm_physician_patient" />
-	<table-filter match-schema="tmdw" match-name="tm_physician_specialtytype" />
-	<table-filter match-schema="tmdw" match-name="tm_province" />
-	<table-filter match-schema="tmdw" match-name="tm_region" />
-	<table-filter match-schema="tmdw" match-name="tm_specialty_type" />
-	<table-filter match-schema="tmdw" match-name="tm_standard_threshold" />
-	<table-filter match-schema="tmdw" match-name="tm_system_event" />
-	<table-filter match-schema="tmdw" match-name="tm_systemevent_type" />
-	<table-filter match-schema="tmdw" match-name="tm_treatment_plan" />
-	<table-filter match-schema="tmdw" match-name="tm_treatment_task" />
-	<table-filter match-schema="tmdw" match-name="tm_work_list" />
-	<table-filter match-schema="tmdw" match-name="tm_work_task" />
-	<table-filter match-schema="tmdw" match-name="tm_work_type" />
-	<table-filter match-schema="tmdw" match-name="tm_gateway_event"/>
-	<table-filter match-schema="tmdw" match-name="tm_gateway_event_battery"/>
-	<table-filter match-schema="tmdw" match-name="tm_gateway_event_blood_pressure"/>
-	<table-filter match-schema="tmdw" match-name="tm_gateway_event_weight"/>
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_care_giver" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_clinic_folder" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_clinic_report" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_country" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_custom_threshold" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_detection_plan" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_detection_result" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_detection_task" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_detection_type" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_detectiontype_measurementtype" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_health_device" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_health_devicetype" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_health_kit" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_healthkit_patient" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_language_type" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_measurement_type" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_measurement_unit" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_meeting_request" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_message" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_municipality" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_notification" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_notification_type" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_nurse" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_nurse_organizationunit" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_nurse_patient" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_organization_unit" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_patient" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_patient_caregiver" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_physician" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_physician_organizationunit" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_physician_patient" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_physician_specialtytype" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_province" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_region" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_specialty_type" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_standard_threshold" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_system_event" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_systemevent_type" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_treatment_plan" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_treatment_task" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_work_list" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_work_task" /> -->
+<!-- 	<table-filter match-schema="tmdw" match-name="tm_work_type" /> -->
+	
+	<table-filter match-schema="tmdw" match-name="tm_gateway_event" />
+	<table-filter match-schema="tmdw" match-name="tm_gateway_event_battery" />
+	<table-filter match-schema="tmdw" match-name="tm_gateway_event_blood_pressure" />
+	<table-filter match-schema="tmdw" match-name="tm_gateway_event_weight" />
 	
 	<table name="tm_gateway_event">
 		<primary-key>
@@ -72,6 +73,14 @@
 	</table>
 	
 	<table name="tm_gateway_event_battery">
+		<primary-key>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">tm_gateway_event_idbattery_seq</param>
+			</generator>
+			<key-column name="idbattery"/>
+		</primary-key>
 		<column name="active" exclude="true"/>
 		<column name="userupdate" exclude="true"/>
 		<column name="created" exclude="true"/>
@@ -79,6 +88,14 @@
 	</table>
 	
 	<table name="tm_gateway_event_blood_pressure">
+		<primary-key>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">tm_gateway_event_idbloodpressure_seq</param>
+			</generator>
+			<key-column name="idbloodpressure"/>
+		</primary-key>
 		<column name="active" exclude="true"/>
 		<column name="userupdate" exclude="true"/>
 		<column name="created" exclude="true"/>
@@ -86,6 +103,14 @@
 	</table>
 	
 	<table name="tm_gateway_event_weight">
+		<primary-key>
+			<generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="optimizer">none</param>
+            	<param name="increment_size">1</param>
+            	<param name="sequence_name">tm_gateway_event_idweight_seq</param>
+			</generator>
+			<key-column name="idweight"/>
+		</primary-key>
 		<column name="active" exclude="true"/>
 		<column name="userupdate" exclude="true"/>
 		<column name="created" exclude="true"/>
