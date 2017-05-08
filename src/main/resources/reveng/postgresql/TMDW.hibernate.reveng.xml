@@ -51,6 +51,10 @@
 	<table-filter match-schema="tmdw" match-name="tm_work_list" />
 	<table-filter match-schema="tmdw" match-name="tm_work_task" />
 	<table-filter match-schema="tmdw" match-name="tm_work_type" />
+	<table-filter match-schema="tmdw" match-name="tm_gateway_event"/>
+	<table-filter match-schema="tmdw" match-name="tm_gateway_event_battery"/>
+	<table-filter match-schema="tmdw" match-name="tm_gateway_event_blood_pressure"/>
+	<table-filter match-schema="tmdw" match-name="tm_gateway_event_weight"/>
 	
 	<table name="tm_gateway_event">
 		<primary-key>
