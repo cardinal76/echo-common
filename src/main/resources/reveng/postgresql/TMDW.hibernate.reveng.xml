@@ -30,16 +30,13 @@
 	<table-filter match-schema="tmdw" match-name="tm_municipality" />
 	<table-filter match-schema="tmdw" match-name="tm_notification" />
 	<table-filter match-schema="tmdw" match-name="tm_notification_type" />
-	<table-filter match-schema="tmdw" match-name="tm_nurse" />
-	<table-filter match-schema="tmdw" match-name="tm_nurse_organizationunit" />
-	<table-filter match-schema="tmdw" match-name="tm_nurse_patient" />
 	<table-filter match-schema="tmdw" match-name="tm_organization_unit" />
 	<table-filter match-schema="tmdw" match-name="tm_patient" />
 	<table-filter match-schema="tmdw" match-name="tm_patient_caregiver" />
-	<table-filter match-schema="tmdw" match-name="tm_physician" />
-	<table-filter match-schema="tmdw" match-name="tm_physician_organizationunit" />
-	<table-filter match-schema="tmdw" match-name="tm_physician_patient" />
-	<table-filter match-schema="tmdw" match-name="tm_physician_specialtytype" />
+	<table-filter match-schema="tmdw" match-name="tm_user" />
+	<table-filter match-schema="tmdw" match-name="tm_user_organizationunit" />
+	<table-filter match-schema="tmdw" match-name="tm_user_patient" />
+	<table-filter match-schema="tmdw" match-name="tm_user_specialtytype" />
 	<table-filter match-schema="tmdw" match-name="tm_province" />
 	<table-filter match-schema="tmdw" match-name="tm_region" />
 	<table-filter match-schema="tmdw" match-name="tm_specialty_type" />
