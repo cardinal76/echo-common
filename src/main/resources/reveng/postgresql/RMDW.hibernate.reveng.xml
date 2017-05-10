@@ -325,6 +325,21 @@
 		<column name="userupdate" exclude="true"/>
 		<column name="created" exclude="true"/>
 		<column name="updated" exclude="true"/>
+		 <!-- WorkSession -->
+		<foreign-key constraint-name="order_idworksession_fkey">
+			<column-ref local-column="idworksession" foreign-column="idworksession"/>
+			<one-to-one cascade="all" exclude="false" fetch="join" property="workSession"/>
+		</foreign-key>
+		 <!-- OrderLog -->
+		<foreign-key constraint-name="order_log_idorder_fkey">
+			<column-ref local-column="idorder" foreign-column="idorder"/>
+			<set cascade="all" exclude="false" property="orderLogs"/>
+		</foreign-key>
+		 <!-- OrderService -->
+		<foreign-key constraint-name="order_service_idorder_fkey">
+			<column-ref local-column="idorder" foreign-column="idorder"/>
+			<set cascade="all" exclude="false" property="orderServices"/>
+		</foreign-key>
 	</table>
 	
 	<table name="rd_order_log">
