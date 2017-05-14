@@ -7,7 +7,7 @@
     	<property name="hibernate.default_schema">rmdw</property>
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
         <property name="hibernate.connection.password">echo</property>
-        <property name="hibernate.connection.url">jdbc:postgresql://192.168.1.240:5432/echodb</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://dev.neclab.it:5432/echodb</property>
         <property name="hibernate.connection.username">echo</property>
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
     </session-factory>
