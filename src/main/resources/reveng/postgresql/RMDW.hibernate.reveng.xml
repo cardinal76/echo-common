@@ -46,6 +46,9 @@
 	<table-filter match-schema="rmdw" match-name="rd_work_status" />
 	<table-filter match-schema="rmdw" match-name="rd_work_task" />
 	<table-filter match-schema="rmdw" match-name="rd_work_task_log" />
+	
+	<!-- view -->
+	<table-filter match-schema="rmdw" match-name="rd_v_modalitytype_allocation" />
 
 	<table name="rd_app_setting">
 		<primary-key>
@@ -613,6 +616,18 @@
             	<param name="sequence_name">worktasklog_idworktasklog_seq</param>			
             </generator>
 			<key-column name="idworktasklog"/>
+		</primary-key>
+		<column name="active" exclude="true"/>
+		<column name="userupdate" exclude="true"/>
+		<column name="created" exclude="true"/>
+		<column name="updated" exclude="true"/>
+	</table>
+	
+	<!-- views -->
+	
+	<table name="rd_v_modalitytype_allocation">
+		<primary-key>
+			<key-column name="id"/>
 		</primary-key>
 		<column name="active" exclude="true"/>
 		<column name="userupdate" exclude="true"/>
