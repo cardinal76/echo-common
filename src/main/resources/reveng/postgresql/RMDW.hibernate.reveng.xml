@@ -332,7 +332,7 @@
 		 <!-- WorkSession -->
 		<foreign-key constraint-name="order_idworksession_fkey">
 			<column-ref local-column="idworksession" foreign-column="idworksession"/>
-			<one-to-one cascade="all" exclude="false" fetch="join" property="workSession"/>
+			<one-to-one cascade="refresh" exclude="false" fetch="join" property="workSession"/>
 		</foreign-key>
 		 <!-- OrderLog -->
 		<foreign-key constraint-name="order_log_idorder_fkey">
