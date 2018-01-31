@@ -12,7 +12,7 @@ c) Hibernate custom reverse engineering strategy (one per module) placed in the 
 In order to run this plugin you must have the following pre-requisites:<br/>
 - Oracle Java Development Kit 8<br/>
 - Apache Maven 3.3.x or later<br/>
-- Echo platform source code (you can get it <a href="http://dev.neclab.it:8181/a.matteo/echo">here</a>)<br/>
+- Echo platform source code (you can get it <a href="https://github.com/cardinal76/echo">here</a>)<br/>
 - Echo-hibernate 
 
 Note: this plugin must be checked out from gitlab and placed in the same IDE workspace folder as echo platform<br/>
